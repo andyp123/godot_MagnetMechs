@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player/FollowCamera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/PlayerMech.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldGrid.tres" type="Material" id=3]
+[ext_resource path="res://Terrain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cargo/RescuePod.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="CubeMesh" id=6]
+
+[node name="Default" type="Spatial"]
+
+[node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 19.0998 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Floor"]
+transform = Transform( 1.57445, 0.195244, -8.15228e-09, -0.31032, 0.971009, -0.313777, -0.0440766, 0.137918, 2.20913, -0.969038, -0.00893879, 1.28254 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape3"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 4.30575, 0, 0, 0, 2.18961, -1.95787, 2.72423, -7.59852 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape5"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 1.47284, 0, 0, 0, 2.18961, 3.02216, 5.52223, -7.59293 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape9"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 4.30575, 0, 0, 0, 2.18961, -7.06301, 0.544775, -7.59852 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape8"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Floor"]
+transform = Transform( 5.56422, 0, 0, 0, 4.30575, 0, 0, 0, 5.91287, -12.4398, -1.92283, -7.58029 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape7"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 4.30575, 0, 0, 0, 2.18961, 7.86235, 4.34539, -7.56043 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape6"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 4.30575, 0, 0, 0, 2.18961, -1.60349, 4.71589, 19.0098 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape10"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Floor"]
+transform = Transform( 3.18351, 0, 0, 0, 1.83417, 0, 0, 0, 2.18961, -6.98389, 1.68083, 19.0098 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape13"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 1.47284, 0, 0, 0, 2.18961, 3.02216, 5.00903, 19.0154 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape11"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Floor"]
+transform = Transform( 2.61561, 0, 0, 0, 4.30575, 0, 0, 0, 2.18961, 7.63499, 4.80955, 19.0479 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape12"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Floor"]
+transform = Transform( 5.4591, -0.8396, 0, 2.11867, 2.16337, 0, 0, 0, 3.46549, 9.6631, -0.160181, 1.54082 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape4"]
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="terrain_test" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.021082, 0, -0.999778, 0, 1, 0, 0.999778, 0, 0.021082, 0.0123493, -0.225858, -9.5464 )
+
+[node name="RescuePod" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.929, 2.37533, -3.88856 )
+
+[node name="RescuePod2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7312, 3.86197, 1.61397 )
+
+[node name="RescuePod3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279855, 1.22037, 1.08838 )
+
+[node name="FollowCamera" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.98046, 0.196716, 0, -0.196716, 0.98046, 0, 5.01689, 11.0905 )
+
+[node name="PlayerMech" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61728, 5.58293 )
