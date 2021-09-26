@@ -3,7 +3,6 @@ extends Spatial
 #onready var default_level = preload(export (PackedScene))
 export (PackedScene) var default_level = preload("res://Default.tscn")
 onready var logo = $Logo
-onready var mech_legs = $PlayerMech/Armature/Skeleton
 
 # Array of dictionaries
 var letters = {}
@@ -12,10 +11,14 @@ var letter_rotation_speed: float = 180
 var spring_friction: float = 10
 var spring_constant: float = 60
 
+var TIME = 0
+onready var skeleton = $PlayerMech/Armature/Skeleton
+onready var mech_body_id = skeleton.find_bone("body")
+
 func _ready() -> void:
 	randomize()
 	letter_rotation_speed = deg2rad(letter_rotation_speed)
-	
+
 	# Replace static bodies with rigid bodies
 	var i: int = logo.get_child_count() - 1
 	var children = logo.get_children()
@@ -25,7 +28,7 @@ func _ready() -> void:
 		var sb_children = sb.get_children()
 		var rb: RigidBody = RigidBody.new()
 		rb.name = "RB_" + node.name
-		rb.global_transform = node.global_transform
+		rb.transform = node.transform
 		rb.mode = letter_mode
 		for c in sb_children:
 			sb.remove_child(c)
@@ -38,13 +41,20 @@ func _ready() -> void:
 		letters[node.name] = {'body': rb, 'transform': rb.transform, 'velocity': Vector3.ZERO}
 		i -= 1
 
+	# IK won't do anything unless start is called
+	var ik_left: SkeletonIK = skeleton.find_node("IK_Left")
+	var ik_right: SkeletonIK = find_node("IK_Right")
+	ik_left.start(false)
+	ik_right.start(false)
+
 
 func toggle_letter_mode() -> void:
+	pass
 	if letter_mode == RigidBody.MODE_RIGID:
 		letter_mode = RigidBody.MODE_KINEMATIC
 	else:
 		letter_mode = RigidBody.MODE_RIGID
-		
+
 	for letter in letters.values():
 		letter['body'].mode = letter_mode
 		if letter_mode == RigidBody.MODE_RIGID:
@@ -55,6 +65,8 @@ func toggle_letter_mode() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	TIME += delta
+	
 	if Input.is_action_just_pressed("ui_select"):
 		toggle_letter_mode()
 	
@@ -74,9 +86,14 @@ func _physics_process(delta: float) -> void:
 			var quat_target := Quat(target.basis)
 			quat_body = quat_body.slerp(quat_target, letter_rotation_speed * delta)
 			body.transform.basis = Basis(quat_body)
-			
-	mech_legs.manual_update(delta)
 
+	# Quick and nasty body animation (could probably just import an animation if I knew how)
+	var t := Transform()
+	t.origin += Vector3.UP * sin(TIME) * 0.2
+	var b := Basis(t.basis.y, cos(TIME * 0.5) * deg2rad(15))
+	b = b.rotated(b.z, sin(TIME * 1) * deg2rad(5))
+	t.basis = b
+	skeleton.set_bone_pose(mech_body_id, t)
 
 
 func _on_QuitButton_pressed() -> void:

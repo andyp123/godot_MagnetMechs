@@ -12,7 +12,7 @@ export var height_adjust_speed: float = 3
 
 # Body height
 export var body_height_min: float = 1
-export var body_height_max: float = 3.8
+export var body_height_max: float = 4
 var body_height: float = 3
 
 # Spring settings

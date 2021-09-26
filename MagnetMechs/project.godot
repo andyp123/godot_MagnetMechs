@@ -48,6 +48,8 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
+window/size/width=640
+window/size/height=480
 window/size/resizable=false
 
 [input]
@@ -114,4 +116,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"
