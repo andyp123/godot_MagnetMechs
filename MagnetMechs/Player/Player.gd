@@ -13,7 +13,7 @@ export var height_adjust_speed: float = 3
 # Body height
 export var body_height_min: float = 1
 export var body_height_max: float = 4
-var body_height: float = 3
+var body_height: float = 2.5
 
 # Spring settings
 var use_spring: bool = false
@@ -52,8 +52,8 @@ func _physics_process(delta: float) -> void:
 	velocity += (target_velocity - velocity) * acceleration * delta
 	
 	# Add spring forces if we didn't just jump
-	var hit = _get_ground_hit()
-	if hit:
+#	var hit = _get_ground_hit()
+	if true:
 		if height_input > 0 or detector.tracked_object_count() == 0:
 			body_height += height_input * height_adjust_speed * delta
 			body_height = clamp(body_height, body_height_min + stack_size, body_height_max)
@@ -68,13 +68,14 @@ func _physics_process(delta: float) -> void:
 	velocity += Vector3.UP * -gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)#, false, 4, 0.785398, false)
 
+	# Really need to rework the legs to be less of a mess
 	legs.manual_update(delta, move_input * 5)
 
 	# Pick up/drop cargo
 	if Input.is_action_just_pressed("pick_up") and cargo_stack.size() < max_cargo:
 		var cargo: Cargo = detector.get_nearest_cargo(translation)
 		if cargo:
-			cargo.attach_to_target(self, Vector3.UP * -(cargo_stack.size() + 0.5))
+			cargo.attach_to_target(self, Vector3(0, -(cargo_stack.size() + 0.5), -0.15))
 			cargo_stack.append(cargo)
 			_adjust_cargo_collider()
 			cargo.connect("uncoupled", self, "_on_cargo_decoupled")

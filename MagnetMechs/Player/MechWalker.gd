@@ -3,10 +3,12 @@ class_name MechWalker
 
 # Settings
 export var step_length: float = 1.5
+export var max_step_length: float = 2.25
 export var step_duration: float = 0.5
 export var step_height: float = 1.5
 export var leg_length: float = 6
 export var foot_x_offset: float = 0.5
+export var max_floor_angle: float = 60
 
 # Components
 onready var ik_left: SkeletonIK = find_node("IK_Left")
@@ -20,21 +22,31 @@ onready var foot_r_id: int = find_bone("foot_r")
 
 # Parameters for leg animation
 var current_foot: SkeletonIK
-var foot_lerp_time: float = 0
+var foot_lerp_time: float = step_duration # If less than this, there will be leg weirdness on start!
 var foot_start_transform: Transform
 var foot_end_transform: Transform
 var step_failed: bool = false
 
 
 func _ready() -> void:
+	max_floor_angle = sin(deg2rad(max_floor_angle))
+	
 	if ik_left and ik_right:
+		var t: Transform = global_transform
+		var b: Basis = transform.basis
+		ik_left.target = Transform(b, t.origin + b.x * 2 + b.y * -1)
+		ik_right.target = Transform(b, t.origin + b.x * -2 + b.y * -1)
 		current_foot = ik_left
+		foot_end_transform = ik_left.target
 		ik_left.start(false)
 		ik_right.start(false)
-#		_update_feet()
+	else:
+		print("Error: Incorrect feet setup")
 
 
 func manual_update(delta: float, foot_z_offset: float = 0) -> void:
+	if current_foot == null:
+		return
 	if foot_lerp_time < step_duration:
 		var body_y = (global_transform * (get_bone_global_pose(hip_l_id).origin)).y
 		var diff_y = body_y - foot_start_transform.origin.y
@@ -67,24 +79,30 @@ func _update_feet(z_offset: float = 0) -> bool:
 	var zero_y = Vector3(1,0,1)
 	var start_l = ik_left.target.origin
 	var start_r = ik_right.target.origin
-	var dist_l = 0 if !hit_l else ((hit_l.position - start_l) * zero_y).length()
-	var dist_r = 0 if !hit_r else ((hit_r.position - start_r) * zero_y).length()
+	var dist_l = 0 if !_is_hit_valid(hit_l) else ((hit_l.position - start_l) * zero_y).length()
+	var dist_r = 0 if !_is_hit_valid(hit_r) else ((hit_r.position - start_r) * zero_y).length()
 	# Move feet if the new hit locations are far from the current target
 	# Only move one at a time, and prioritize based on distance
 	if !(hit_l or hit_r):
 		return false
-	if max(dist_l, dist_r) > step_length:
+	if max(dist_l, dist_r) > max_step_length:
 		foot_lerp_time = 0
 		if dist_l > dist_r:
 			current_foot = ik_left
 			foot_start_transform = current_foot.target
 			foot_end_transform = _update_foot_target(current_foot, hit_l)
-		elif dist_r > step_length:
+		elif dist_r > max_step_length:
 			current_foot = ik_right
 			foot_start_transform = current_foot.target
 			foot_end_transform = _update_foot_target(current_foot, hit_r)
 	return true
 
+
+func _is_hit_valid(hit) -> bool:
+	if !hit.empty():
+		var dot: float = Vector3.UP.dot(hit['normal'])
+		return dot >= max_floor_angle
+	return false
 
 func _update_foot_target(ik: SkeletonIK, hit: Dictionary) -> Transform:
 	var target = ik.target

@@ -18,6 +18,9 @@ export var max_rotation_x: float = 75
 var look_input: Vector2 = Vector2.ZERO
 var rotation_offset: Vector2 = Vector2.ZERO
 
+# Stick input settings
+export var stick_pan_speed: float = 4
+
 var target: Spatial = null
 var is_following = true
 
@@ -36,8 +39,13 @@ func _process(delta: float) -> void:
 	if target == null:
 		return
 	
+	# mouse
 	rotation_offset.y += look_input.x * mouse_sensitivity.x * delta
 	rotation_offset.x += look_input.y * mouse_sensitivity.y * delta
+	# joy
+	rotation_offset.y += (Input.get_action_strength("look_right") - Input.get_action_strength("look_left")) * stick_pan_speed * delta
+	rotation_offset.x += -(Input.get_action_strength("look_up") - Input.get_action_strength("look_down")) * stick_pan_speed * delta
+	
 	rotation_offset.y = fmod(rotation_offset.y + 2 * PI, 2 * PI)
 	rotation_offset.x = clamp(rotation_offset.x, -max_rotation_x * 0.1, max_rotation_x)
 	

@@ -17,7 +17,8 @@ signal uncoupled
 var velocity: Vector3 = Vector3.ZERO
 
 func _get_spring_force() -> Vector3:
-	var target: Vector3 = spring_target.translation + spring_target_offset
+	var quat := Quat(spring_target.transform.basis.orthonormalized())
+	var target: Vector3 = spring_target.translation + quat * spring_target_offset
 	return -spring_friction * velocity - spring_constant * (translation - target)
 
 
