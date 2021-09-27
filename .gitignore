@@ -9,8 +9,8 @@ export_presets.cfg
 data_*/
 
 # Project Specific ignores
-AssetSource/*
-Builds/*
+AssetSource/**
+Builds/**
 
 # Blender backup ignores
 *.blend1
