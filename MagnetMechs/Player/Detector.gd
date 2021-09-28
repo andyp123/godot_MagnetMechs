@@ -3,6 +3,8 @@ class_name Detector
 
 var tracked_objects = []
 
+signal cargo_hovered
+signal cargo_unhovered
 
 func _ready() -> void:
 	self.connect("body_entered", self, "_body_entered")
@@ -12,13 +14,13 @@ func _ready() -> void:
 func _body_entered(body: PhysicsBody) -> void:
 	if body is Cargo:
 		tracked_objects.append(body)
-#		print(body.name, " tracked - ", tracked_objects)
+		emit_signal("cargo_hovered", body, true)
 
 
 func _body_exited(body: PhysicsBody) -> void:
 	if body is Cargo:
 		tracked_objects.erase(body)
-#		print(body.name, " untracked")
+		emit_signal("cargo_unhovered", body, false)
 
 
 func get_nearest_cargo(to_pos: Vector3) -> Cargo:

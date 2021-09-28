@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/mech_walker_b.glb-0c68c99f092f3968da112250c05f13f2.scn"
+path="res://.import/EvacPoint.glb-a11e4746b8a21bfc16539e706b356069.scn"
 
 [deps]
 
-source_file="res://Player/mech_walker_b.glb"
-dest_files=[ "res://.import/mech_walker_b.glb-0c68c99f092f3968da112250c05f13f2.scn" ]
+source_file="res://Environment/EvacPoint.glb"
+dest_files=[ "res://.import/EvacPoint.glb-a11e4746b8a21bfc16539e706b356069.scn" ]
 
 [params]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Detector.gd" type="Script" id=1]
 [ext_resource path="res://Player/MechWalker.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Player/PlayerMech.material" type="Material" id=4]
+[ext_resource path="res://UI/CargoUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ArrayMesh" id=7]
 resource_name = "PlayerMech_Cylinder010"
@@ -71,6 +72,7 @@ height = 0.8
 "players",
 ]]
 script = ExtResource( 3 )
+cargo_ui_template = ExtResource( 5 )
 
 [node name="Armature" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.768, 0 )
@@ -133,14 +135,14 @@ process_priority = 1
 root_bone = "upper_leg_l"
 tip_bone = "foot_l"
 use_magnet = true
-magnet = Vector3( -1.5, 3, 3 )
+magnet = Vector3( -1.2, 3, 3 )
 
 [node name="IK_Right" type="SkeletonIK" parent="Armature/Skeleton"]
 process_priority = 1
 root_bone = "upper_leg_r"
 tip_bone = "foot_r"
 use_magnet = true
-magnet = Vector3( 1.5, 3, 3 )
+magnet = Vector3( 1.2, 3, 3 )
 
 [node name="Mech" type="MeshInstance" parent="Armature/Skeleton"]
 mesh = SubResource( 7 )

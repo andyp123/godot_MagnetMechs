@@ -34,6 +34,8 @@ func _ready() -> void:
 	if players.size() > 0:
 		target = players[0]
 		print("Found Player: ", target.name)
+		
+		translation = target.transform.origin + target.transform.basis.z * follow_distance
 	
 func _process(delta: float) -> void:
 	if target == null:

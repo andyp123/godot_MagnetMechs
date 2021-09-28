@@ -33,6 +33,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+type_name = "Rescue Pod"
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )

@@ -27,11 +27,29 @@ onready var cargo_collider: CollisionShape = $CargoCollision
 var max_cargo = 3
 var cargo_stack = []
 
+# Popup UI
+export (PackedScene) var cargo_ui_template
+export var cargo_ui_scale: float = 2
+var cargo_ui
+
 onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 var velocity: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
-	pass
+	detector.connect("cargo_hovered", self, "_cargo_hover")
+	detector.connect("cargo_unhovered", self, "_cargo_hover")
+	cargo_ui = cargo_ui_template.instance()
+	detector.add_child(cargo_ui)
+	cargo_ui.scale = Vector3.ONE * cargo_ui_scale
+	cargo_ui.hide()
+	
+
+func _cargo_hover(cargo: Cargo, hovered: bool) -> void:
+	if hovered:
+		cargo_ui.update_fields(cargo.type_name, cargo.weight_units)
+		cargo_ui.show()
+	else:
+		cargo_ui.hide()
 	
 	
 func _physics_process(delta: float) -> void:
@@ -87,7 +105,7 @@ func _physics_process(delta: float) -> void:
 			_adjust_cargo_collider() # best do this before making cargo rigid again
 			# This will trigger _on_cargo_decoupled
 			cargo.attach_to_target(null)
-			cargo.apply_central_impulse(-Vector3.UP * 10 + velocity * 0.5)
+			cargo.apply_central_impulse(-Vector3.UP * 2 + velocity * 0.5)
 
 
 func _on_cargo_uncoupled(cargo: Cargo) -> void:
