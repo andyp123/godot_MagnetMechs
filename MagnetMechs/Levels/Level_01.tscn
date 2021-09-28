@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Environment/road_straight.scn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerMech.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Environment/road_hill.scn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/road_curve_90.scn" type="PackedScene" id=9]
 [ext_resource path="res://Environment/tunnel_low.scn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/road_hill_steep.scn" type="PackedScene" id=11]
+[ext_resource path="res://Cargo/CarA.tscn" type="PackedScene" id=12]
 
 [node name="Level" type="Spatial"]
 
@@ -23,13 +25,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 
 [node name="PlayerMech" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 6.03984e-07, 4, -17 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.626666, 4, -17.9589 )
 
 [node name="RescuePod" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3, -20.5 )
 
 [node name="RescuePod2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2, -0.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4586, 3.03106, 11.0735 )
 
 [node name="RescuePod3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5.5, -2.5 )
@@ -93,3 +95,18 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.884
 
 [node name="tunnel_low" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2.5, -10 )
+
+[node name="road_hill_steep" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, 20 )
+
+[node name="CarA" parent="." instance=ExtResource( 12 )]
+transform = Transform( -4.33747e-08, -5.4149e-09, -1, -0.123879, 0.992297, 0, 0.992297, 0.123879, -4.37114e-08, -9, 4.02169, 7.31854 )
+
+[node name="CarA3" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0633, 4.26434, -2.07614 )
+
+[node name="CarA2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.992525, 0.121123, -0.0149002, -0.121136, 0.992636, -1.79867e-05, 0.0147883, 0.00182281, 0.999889, -2.65905, 1.36489, -5.86486 )
+
+[node name="CarA4" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.991076, 0.133286, -0.00160273, -0.133251, 0.990986, 0.0137864, 0.00342582, -0.0134498, 0.999903, -2.80211, 1.40977, -9.5275 )

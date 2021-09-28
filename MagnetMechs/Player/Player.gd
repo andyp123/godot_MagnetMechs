@@ -23,6 +23,7 @@ onready var legs: MechWalker = $Armature/Skeleton
 onready var detector: Detector = $Detector
 onready var cargo_collider: CollisionShape = $CargoCollision
 var max_cargo = 3
+var max_weight = 3
 var cargo_stack = []
 
 # Popup UI
@@ -90,10 +91,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pick_up") and cargo_stack.size() < max_cargo:
 		var cargo: Cargo = detector.get_nearest_cargo(translation)
 		if cargo:
-			cargo.attach_to_target(self, Vector3(0, -(cargo_stack.size() + 0.5), -0.15))
-			cargo_stack.append(cargo)
-			_adjust_cargo_collider()
-			cargo.connect("uncoupled", self, "_on_cargo_decoupled")
+			var total_weight = 0
+			for c in cargo_stack:
+				total_weight += c.weight_units
+			if total_weight + cargo.weight_units <= max_weight:
+				cargo.attach_to_target(self, Vector3(0, -(total_weight + cargo.weight_units * 0.5), -0.15))
+				cargo.connect("uncoupled", self, "_on_cargo_decoupled")
+				cargo_stack.append(cargo)
+				_adjust_cargo_collider()
 	
 	if Input.is_action_just_pressed("drop"):
 		var cargo: Cargo = cargo_stack.back()
@@ -111,7 +116,10 @@ func _on_cargo_uncoupled(cargo: Cargo) -> void:
 
 
 func _adjust_cargo_collider() -> void:
-	var stack_size = cargo_stack.size()
+	var total_weight = 0
+	for c in cargo_stack:
+		total_weight += c.weight_units
+	var stack_size = total_weight
 	cargo_collider.disabled = stack_size == 0
 	
 	var collider: CylinderShape = cargo_collider.shape

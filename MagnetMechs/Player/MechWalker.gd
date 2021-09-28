@@ -34,7 +34,7 @@ export var force_step_on_rotate_angle: float = 10
 
 
 func _ready() -> void:
-	max_floor_angle = sin(deg2rad(max_floor_angle))
+	max_floor_angle = 1 - sin(deg2rad(max_floor_angle))
 	force_step_on_rotate_angle = 1 - sin(deg2rad(force_step_on_rotate_angle))
 	
 	if ik_left and ik_right:

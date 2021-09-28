@@ -43,7 +43,10 @@ func attach_to_target(target: Spatial, target_offset: Vector3 = Vector3.ZERO):
 	else:
 		velocity = linear_velocity
 		mode = MODE_KINEMATIC
-	$CollisionShape.disabled = !is_rigid
+	for c in get_children():
+		if c is CollisionShape:
+			c.disabled = !is_rigid
+#	$CollisionShape.disabled = !is_rigid
 	can_sleep = is_rigid
 
 	if emit_uncoupled:
