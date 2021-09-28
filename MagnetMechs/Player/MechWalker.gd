@@ -27,9 +27,15 @@ var foot_start_transform: Transform
 var foot_end_transform: Transform
 var step_failed: bool = false
 
+# Update legs if rotation changes too much
+var last_forward_on_move_l: Vector3 = Vector3.FORWARD
+var last_forward_on_move_r: Vector3 = Vector3.FORWARD
+export var force_step_on_rotate_angle: float = 10
+
 
 func _ready() -> void:
 	max_floor_angle = sin(deg2rad(max_floor_angle))
+	force_step_on_rotate_angle = 1 - sin(deg2rad(force_step_on_rotate_angle))
 	
 	if ik_left and ik_right:
 		var t: Transform = global_transform
@@ -59,8 +65,10 @@ func manual_update(delta: float, foot_z_offset: float = 0, update_feet: bool = t
 		foot_lerp_time += delta
 	else:
 		current_foot.target = foot_end_transform
-		if update_feet:
-			step_failed = !_update_feet(foot_z_offset)
+		if foot_z_offset != 0:
+			_update_feet(foot_z_offset)
+		else:
+			_update_feet_on_rotation()
 
 
 # Just used on startup to make sure the feet are in the right place
@@ -78,6 +86,10 @@ func _place_feet() -> void:
 	hit = space_state.intersect_ray(start, end, [self], 1)
 	if _is_hit_valid(hit):
 		ik_right.target = _update_foot_target(ik_right, hit)
+	
+	# Don't move feet around until we move or rotate
+	last_forward_on_move_l = global_transform.basis.z
+	last_forward_on_move_r = last_forward_on_move_l
 
 
 func _update_feet(z_offset: float = 0) -> bool:
@@ -110,11 +122,44 @@ func _update_feet(z_offset: float = 0) -> bool:
 			current_foot = ik_left
 			foot_start_transform = current_foot.target
 			foot_end_transform = _update_foot_target(current_foot, hit_l)
+			last_forward_on_move_l = global_transform.basis.z
 		elif dist_r > max_step_length:
 			current_foot = ik_right
 			foot_start_transform = current_foot.target
 			foot_end_transform = _update_foot_target(current_foot, hit_r)
+			last_forward_on_move_r = global_transform.basis.z
 	return true
+
+
+func _update_feet_on_rotation() -> void:
+	# We may want to update the feet on rotation
+	var forward = global_transform.basis.z
+	var dot_l = forward.dot(last_forward_on_move_l)
+	var dot_r = forward.dot(last_forward_on_move_r)
+	
+#	print("angle: %f, dot_l: %f, dot_r: %f" % [force_step_on_rotate_angle, dot_l, dot_r])
+	
+	if min(dot_l, dot_r) < force_step_on_rotate_angle:
+		foot_lerp_time = 0
+		var space_state = get_world().direct_space_state
+		if dot_l < dot_r:
+			var start = global_transform * (get_bone_global_pose(hip_l_id).origin)
+			var end = start - Vector3.UP * leg_length
+			var hit = space_state.intersect_ray(start, end, [self], 1)
+			if _is_hit_valid(hit):
+				current_foot = ik_left
+				foot_start_transform = current_foot.target
+				foot_end_transform = _update_foot_target(current_foot, hit)
+				last_forward_on_move_l = global_transform.basis.z
+		elif dot_r < force_step_on_rotate_angle:
+			var start = global_transform * (get_bone_global_pose(hip_r_id).origin)
+			var end = start - Vector3.UP * leg_length
+			var hit = space_state.intersect_ray(start, end, [self], 1)
+			if _is_hit_valid(hit):
+				current_foot = ik_right
+				foot_start_transform = current_foot.target
+				foot_end_transform = _update_foot_target(current_foot, hit)
+				last_forward_on_move_r = global_transform.basis.z
 
 
 func _is_hit_valid(hit) -> bool:
@@ -149,8 +194,6 @@ func _update_foot_target(ik: SkeletonIK, hit: Dictionary) -> Transform:
 
 func get_feet_aabb() -> AABB:
 	var aabb: AABB = AABB()
-#	aabb = AABB(global_transform * (get_bone_global_pose(foot_l_id).origin), Vector3.ZERO)
-#	aabb = aabb.expand(global_transform * (get_bone_global_pose(foot_r_id).origin))
 	aabb = AABB(ik_left.target.origin, Vector3.ZERO)
 	aabb = aabb.expand(ik_right.target.origin)
 	return aabb

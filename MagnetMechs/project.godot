@@ -42,6 +42,10 @@ config/name="Magnet Mechs"
 run/main_scene="res://Title/Title.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+DebugDraw="*res://addons/zylann.debug_draw/debug_draw.gd"
+
 [debug]
 
 gdscript/warnings/return_value_discarded=false
