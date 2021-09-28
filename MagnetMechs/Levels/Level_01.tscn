@@ -23,10 +23,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 
 [node name="PlayerMech" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 4, -21 )
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 6.03984e-07, 4, -17 )
 
 [node name="RescuePod" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3, -19 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3, -20.5 )
 
 [node name="RescuePod2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2, -0.5 )
@@ -60,6 +60,15 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10, 0,
 [node name="building_10x12" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -10, 0, -20 )
 
+[node name="building_10x17" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -30, 2.5, -20 )
+
+[node name="building_10x18" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 2.5, -30 )
+
+[node name="building_10x19" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 2.5, -30 )
+
 [node name="building_10x13" parent="." instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 10, 0, -20 )
 
@@ -83,4 +92,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8848, 2.5, 9.70711 )
 
 [node name="tunnel_low" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2.5, -9.5 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2.5, -10 )

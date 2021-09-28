@@ -2,8 +2,8 @@ extends Skeleton
 class_name MechWalker
 
 # Settings
-export var step_length: float = 1.5
-export var max_step_length: float = 2.25
+#export var step_length: float = 1.5
+export var max_step_length: float = 2.5
 export var step_duration: float = 0.5
 export var step_height: float = 1.5
 export var leg_length: float = 6
@@ -45,7 +45,7 @@ func _ready() -> void:
 		print("Error: Incorrect feet setup")
 
 
-func manual_update(delta: float, foot_z_offset: float = 0) -> void:
+func manual_update(delta: float, foot_z_offset: float = 0, update_feet: bool = true) -> void:
 	if current_foot == null:
 		return
 	if foot_lerp_time < step_duration:
@@ -59,7 +59,8 @@ func manual_update(delta: float, foot_z_offset: float = 0) -> void:
 		foot_lerp_time += delta
 	else:
 		current_foot.target = foot_end_transform
-		step_failed = !_update_feet(foot_z_offset)
+		if update_feet:
+			step_failed = !_update_feet(foot_z_offset)
 
 
 # Just used on startup to make sure the feet are in the right place

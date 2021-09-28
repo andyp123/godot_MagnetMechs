@@ -3,11 +3,9 @@ class_name Player
 
 # Base settings
 export var max_speed: float = 6
-export var jump_speed: float = 8
 export var turn_rate: float = deg2rad(180)
-export var accel: float = 5
+export var accel: float = 8
 export var decel: float = 20
-export var air_acceleration_multiplier: float = 0.25
 export var height_adjust_speed: float = 3
 
 # Body height
@@ -29,7 +27,7 @@ var cargo_stack = []
 
 # Popup UI
 export (PackedScene) var cargo_ui_template
-export var cargo_ui_scale: float = 2
+export var cargo_ui_scale: float = 3
 var cargo_ui
 
 onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
@@ -40,6 +38,7 @@ func _ready() -> void:
 	detector.connect("cargo_unhovered", self, "_cargo_hover")
 	cargo_ui = cargo_ui_template.instance()
 	detector.add_child(cargo_ui)
+	cargo_ui.translation += Vector3.UP * -1
 	cargo_ui.scale = Vector3.ONE * cargo_ui_scale
 	cargo_ui.hide()
 	
@@ -69,18 +68,16 @@ func _physics_process(delta: float) -> void:
 	target_velocity.y = velocity.y
 	velocity += (target_velocity - velocity) * acceleration * delta
 	
-	# Add spring forces if we didn't just jump
-#	var hit = _get_ground_hit()
-	if true:
-		if height_input > 0 or detector.tracked_object_count() == 0:
-			body_height += height_input * height_adjust_speed * delta
-			body_height = clamp(body_height, body_height_min + stack_size, body_height_max)
-			
-		var feet = legs.get_feet_aabb()
-		var center = 0.5 * (feet.end + feet.position)
-		center.y = min(feet.position.y, feet.end.y)
-		spring_target = center + Vector3.UP * body_height
-		velocity += _get_spring_force() * delta
+	# Adjust player height
+	if height_input > 0 or detector.tracked_object_count() == 0:
+		body_height += height_input * height_adjust_speed * delta
+		body_height = clamp(body_height, body_height_min + stack_size, body_height_max)
+		
+	var feet = legs.get_feet_aabb()
+	var center = 0.5 * (feet.end + feet.position)
+	center.y = min(feet.position.y, feet.end.y)
+	spring_target = center + Vector3.UP * body_height
+	velocity += _get_spring_force() * delta
 
 	# Add gravity and calculate new position and velocity
 	velocity += Vector3.UP * -gravity * delta

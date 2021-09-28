@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://TitleUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/9-patch_outline.png" type="Texture" id=2]
 [ext_resource path="res://UI/Font_Large.tres" type="DynamicFont" id=3]
 
