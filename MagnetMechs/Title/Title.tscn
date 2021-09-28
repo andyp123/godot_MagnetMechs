@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Title/Title.gd" type="Script" id=1]
 [ext_resource path="res://Title/MagnetMechs_Logo.glb" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://TitleUITheme.tres" type="Theme" id=4]
 [ext_resource path="res://Player/PlayerMech.material" type="Material" id=5]
 [ext_resource path="res://Cargo/RescuePod.glb" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level_01.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ArrayMesh" id=7]
 resource_name = "PlayerMech_Cylinder010"
@@ -67,6 +68,7 @@ height = 1.0
 
 [node name="Title" type="Spatial"]
 script = ExtResource( 1 )
+default_level = ExtResource( 7 )
 
 [node name="Logo" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.996648, 0, 0.0818166, 0, 1, 0, -0.0818166, 0, 0.996648, 0.0689854, -0.00152732, 0.192128 )

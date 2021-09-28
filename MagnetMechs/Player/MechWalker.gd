@@ -7,7 +7,7 @@ export var max_step_length: float = 2.25
 export var step_duration: float = 0.5
 export var step_height: float = 1.5
 export var leg_length: float = 6
-export var foot_x_offset: float = 0.5
+export var foot_x_offset: float = 0.25
 export var max_floor_angle: float = 60
 
 # Components
@@ -36,10 +36,11 @@ func _ready() -> void:
 		var b: Basis = transform.basis
 		ik_left.target = Transform(b, t.origin + b.x * 2 + b.y * -1)
 		ik_right.target = Transform(b, t.origin + b.x * -2 + b.y * -1)
-		current_foot = ik_left
-		foot_end_transform = ik_left.target
 		ik_left.start(false)
 		ik_right.start(false)
+		_place_feet()
+		current_foot = ik_left
+		foot_end_transform = ik_left.target
 	else:
 		print("Error: Incorrect feet setup")
 
@@ -59,6 +60,23 @@ func manual_update(delta: float, foot_z_offset: float = 0) -> void:
 	else:
 		current_foot.target = foot_end_transform
 		step_failed = !_update_feet(foot_z_offset)
+
+
+# Just used on startup to make sure the feet are in the right place
+func _place_feet() -> void:
+	var space_state = get_world().direct_space_state
+	# Left foot
+	var start = global_transform * (get_bone_global_pose(hip_l_id).origin)
+	var end = start - Vector3.UP * leg_length
+	var hit = space_state.intersect_ray(start, end, [self], 1)
+	if _is_hit_valid(hit):
+		ik_left.target = _update_foot_target(ik_left, hit)
+	# Right foot
+	start = global_transform * (get_bone_global_pose(hip_r_id).origin)
+	end = start - Vector3.UP * leg_length
+	hit = space_state.intersect_ray(start, end, [self], 1)
+	if _is_hit_valid(hit):
+		ik_right.target = _update_foot_target(ik_right, hit)
 
 
 func _update_feet(z_offset: float = 0) -> bool:

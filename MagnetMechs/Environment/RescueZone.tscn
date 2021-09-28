@@ -19,7 +19,7 @@ surfaces/0 = {
 
 [sub_resource type="CylinderShape" id=2]
 radius = 2.0
-height = 1.0
+height = 1.5
 
 [node name="RescueZone" type="Spatial"]
 script = ExtResource( 2 )
@@ -29,7 +29,7 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Detector" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0 )
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
