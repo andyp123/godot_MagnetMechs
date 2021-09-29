@@ -27,8 +27,8 @@ height = 1.0
 [node name="RescuePod" type="RigidBody" groups=[
 "cargo",
 ]]
-collision_layer = 4
-collision_mask = 15
+collision_layer = 32
+collision_mask = 59
 physics_material_override = SubResource( 4 )
 continuous_cd = true
 angular_damp = 2.0

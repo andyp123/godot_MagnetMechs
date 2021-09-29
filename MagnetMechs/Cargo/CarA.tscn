@@ -31,8 +31,8 @@ points = PoolVector3Array( 0.897454, 0.0984484, -1.00914, 0.881695, -0.451366, -
 [node name="CarA" type="RigidBody" groups=[
 "cargo",
 ]]
-collision_layer = 4
-collision_mask = 15
+collision_layer = 16
+collision_mask = 63
 physics_material_override = SubResource( 4 )
 gravity_scale = 2.0
 continuous_cd = true

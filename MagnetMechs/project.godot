@@ -54,6 +54,7 @@ DebugDraw="*res://addons/zylann.debug_draw/debug_draw.gd"
 
 [debug]
 
+gdscript/warnings/unused_argument=false
 gdscript/warnings/return_value_discarded=false
 
 [display]
@@ -158,7 +159,9 @@ toggle_foot_lock={
 
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
-3d_physics/layer_3="Dynamic"
+3d_physics/layer_3="Player_Feet"
+3d_physics/layer_5="Dynamic"
+3d_physics/layer_6="Dynamic_NoFeet"
 
 [physics]
 

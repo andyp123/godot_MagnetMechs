@@ -85,7 +85,7 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector3.UP)#, false, 4, 0.785398, false)
 
 	# Really need to rework the legs to be less of a mess
-	legs.manual_update(delta, move_input * 5, move_input != 0)
+	legs.manual_update(delta, move_input * 5)
 
 	# Pick up/drop cargo
 	if Input.is_action_just_pressed("pick_up") and cargo_stack.size() < max_cargo:

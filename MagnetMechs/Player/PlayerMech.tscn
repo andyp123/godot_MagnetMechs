@@ -111,7 +111,7 @@ bones/5/name = "foot_r"
 bones/5/parent = 4
 bones/5/rest = Transform( -1, 1.4673e-07, 3.56381e-08, -5.68434e-14, 0.23602, -0.971748, -1.50996e-07, -0.971748, -0.23602, 6.09933e-08, 3.27798, 2.59376e-08 )
 bones/5/enabled = true
-bones/5/bound_children = [ NodePath("BoneAttachment_Right") ]
+bones/5/bound_children = [  ]
 bones/6/name = "hip_l"
 bones/6/parent = 1
 bones/6/rest = Transform( 1.19209e-07, -1, -2.15136e-07, 0.999904, 1.19209e-07, 0.0138364, -0.0138364, -2.16998e-07, 0.999904, -1.29943e-16, 1.08521, 4.65661e-09 )
@@ -131,7 +131,7 @@ bones/9/name = "foot_l"
 bones/9/parent = 8
 bones/9/rest = Transform( -1, -6.10096e-07, -1.48181e-07, -2.55795e-13, 0.23602, -0.971748, 6.27833e-07, -0.971748, -0.23602, -2.34777e-07, 3.27798, 5.74026e-08 )
 bones/9/enabled = true
-bones/9/bound_children = [ NodePath("BoneAttachment_Left") ]
+bones/9/bound_children = [  ]
 script = ExtResource( 2 )
 
 [node name="IK_Left" type="SkeletonIK" parent="Armature/Skeleton"]
@@ -158,8 +158,9 @@ transform = Transform( 1, -1.65683e-08, 1.13427e-07, -1.26462e-07, 6.85453e-07, 
 bone_name = "foot_l"
 
 [node name="KinematicBody" type="KinematicBody" parent="Armature/Skeleton/BoneAttachment_Left"]
-collision_layer = 0
-collision_mask = 14
+collision_layer = 4
+collision_mask = 0
+input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/BoneAttachment_Left/KinematicBody"]
 transform = Transform( 1, -3.87945e-15, 0, -1.77636e-15, -4.37114e-08, -0.999999, 3.46671e-14, 0.999999, -4.37113e-08, 0, 0.204819, 0.295477 )
@@ -170,8 +171,9 @@ transform = Transform( 1, 1.75456e-08, -2.39236e-07, 2.45655e-07, 6.25849e-07, 1
 bone_name = "foot_r"
 
 [node name="KinematicBody" type="KinematicBody" parent="Armature/Skeleton/BoneAttachment_Right"]
-collision_layer = 0
-collision_mask = 14
+collision_layer = 4
+collision_mask = 0
+input_ray_pickable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/BoneAttachment_Right/KinematicBody"]
 transform = Transform( 1, -3.87945e-15, 0, -1.77636e-15, -4.37114e-08, -0.999999, 3.46671e-14, 0.999999, -4.37113e-08, 0, 0.204819, 0.295477 )
@@ -197,7 +199,7 @@ disabled = true
 [node name="Detector" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 collision_layer = 0
-collision_mask = 4
+collision_mask = 48
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Detector"]

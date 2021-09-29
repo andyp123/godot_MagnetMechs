@@ -18,7 +18,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 1, 0.188235, 0, 1 )
+albedo_color = Color( 0.93, 0.24552, 0.0744, 1 )
 
 [sub_resource type="CylinderShape" id=2]
 radius = 2.0
@@ -36,7 +36,7 @@ material/0 = SubResource( 3 )
 [node name="Detector" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0 )
 collision_layer = 0
-collision_mask = 4
+collision_mask = 48
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Detector"]

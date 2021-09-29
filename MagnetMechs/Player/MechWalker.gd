@@ -51,7 +51,7 @@ func _ready() -> void:
 		print("Error: Incorrect feet setup")
 
 
-func manual_update(delta: float, foot_z_offset: float = 0, update_feet: bool = true) -> void:
+func manual_update(delta: float, foot_z_offset: float = 0) -> void:
 	if current_foot == null:
 		return
 	if foot_lerp_time < step_duration:
