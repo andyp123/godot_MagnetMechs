@@ -39,7 +39,7 @@ func _on_ReturnButton_pressed() -> void:
 func _on_PauseMenu_visibility_changed() -> void:
 	get_tree().paused = visible
 	if visible:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_PauseMenu_tree_exiting() -> void:

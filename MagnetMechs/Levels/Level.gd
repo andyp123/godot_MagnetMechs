@@ -19,7 +19,7 @@ var current_rescues = 0
 
 
 func restart_level() -> void:
-	var scene = get_tree().reload_current_scene()
+	get_tree().reload_current_scene()
 
 func return_to_title() -> void:
 	get_tree().change_scene("res://Title/Title.tscn")
@@ -45,18 +45,7 @@ func _ready() -> void:
 	level_clear_ui.hide()
 	add_child(level_clear_ui)
 	
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		if pause_menu.visible:
-			pause_menu.hide()
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			pause_menu.show()
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_rescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
@@ -65,9 +54,21 @@ func _on_rescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 		pause_menu.hide() # just in case
 		level_clear_ui.show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	print("RESCUE")
 
 
 func _on_unrescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 	current_rescues -= 1
-	print("UNRESCUE")
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.scancode == KEY_ESCAPE and event.pressed and !event.echo:
+			if pause_menu.visible:
+				pause_menu.hide()
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			else:
+				pause_menu.show()
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
+
