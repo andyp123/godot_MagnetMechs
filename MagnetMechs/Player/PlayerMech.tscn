@@ -75,6 +75,7 @@ height = 0.8
 [node name="PlayerMech" type="KinematicBody" groups=[
 "players",
 ]]
+collision_layer = 2
 script = ExtResource( 3 )
 cargo_ui_template = ExtResource( 5 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Environment/road_straight.scn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerMech.tscn" type="PackedScene" id=2]
@@ -13,9 +13,9 @@
 [ext_resource path="res://Environment/road_hill_steep.scn" type="PackedScene" id=11]
 [ext_resource path="res://Cargo/CarA.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=13]
+[ext_resource path="res://LevelEntities/Trigger.tscn" type="PackedScene" id=15]
 
 [node name="LevelRoot" instance=ExtResource( 13 )]
-next_scene = "res://Levels/Level_02"
 
 [node name="PlayerMech" parent="." index="0" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.626666, 4, -13.3084 )
@@ -37,16 +37,13 @@ transform = Transform( -0.986915, 0, -0.161242, 0, 1, 0, 0.161242, 0, -0.986915,
 [node name="RescueZone" parent="." index="6" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8848, 2.5, 9.70711 )
 
-[node name="CarA" parent="." index="7" instance=ExtResource( 12 )]
-transform = Transform( -4.33747e-08, -5.4149e-09, -1, -0.123879, 0.992297, 0, 0.992297, 0.123879, -4.37114e-08, -9, 4.02169, 7.31854 )
-
-[node name="CarA2" parent="." index="8" instance=ExtResource( 12 )]
+[node name="CarA2" parent="." index="7" instance=ExtResource( 12 )]
 transform = Transform( 0.989213, -0.14648, -6.164e-10, 0.146398, 0.988662, -0.0333824, 0.00488986, 0.0330223, 0.999443, -17.1345, 8.72158, 26.5447 )
 
-[node name="CarA3" parent="." index="9" instance=ExtResource( 12 )]
+[node name="CarA3" parent="." index="8" instance=ExtResource( 12 )]
 transform = Transform( 0.99195, 0.126632, 0, -0.126632, 0.99195, 0, 0, 0, 1, -22.3634, 3.76434, -6.07614 )
 
-[node name="CarA4" parent="." index="10" instance=ExtResource( 12 )]
+[node name="CarA4" parent="." index="9" instance=ExtResource( 12 )]
 transform = Transform( 0.991076, 0.133286, -0.00160273, -0.133251, 0.990986, 0.0137864, 0.00342582, -0.0134498, 0.999903, -2.8061, 1.44411, -7.03693 )
 
 [node name="road_straight4" parent="LevelGeometry" index="0" instance=ExtResource( 1 )]
@@ -180,3 +177,14 @@ skeleton = NodePath("../..")
 [node name="road_hill_steep" parent="LevelGeometry" index="32" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, 20 )
 skeleton = NodePath("../..")
+
+[node name="Trigger" parent="." index="12" instance=ExtResource( 15 )]
+transform = Transform( 3.59558, 0, 0, 0, 3.59558, 0, 0, 0, 3.59558, 0.911873, 1.56837, -5.82297 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="13"]
+transform = Transform( -0.854323, -0.0424732, 0.518004, 0.506772, -0.289337, 0.812075, 0.115386, 0.956285, 0.268711, 0, 16.3704, 0 )
+light_color = Color( 0.792157, 0.890196, 0.890196, 1 )
+light_energy = 0.6
+light_bake_mode = 0
+shadow_enabled = true
+shadow_color = Color( 0.101961, 0.101961, 0.121569, 1 )

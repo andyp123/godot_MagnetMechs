@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/ProfessorGodot.png" type="Texture" id=2]
+[ext_resource path="res://UI/9-patch_dialogue.png" type="Texture" id=3]
+
+[node name="DialogueUI" type="Control"]
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueBox" type="NinePatchRect" parent="."]
+margin_right = 856.0
+margin_bottom = 165.0
+texture = ExtResource( 3 )
+patch_margin_left = 32
+patch_margin_top = 72
+patch_margin_right = 32
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="DialogueBox"]
+margin_left = 28.0
+margin_top = 14.0
+margin_right = 229.0
+margin_bottom = 39.0
+theme = ExtResource( 1 )
+text = "Professor Goddo"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 135.0
+margin_top = 64.0
+margin_right = -28.0
+margin_bottom = -28.0
+theme = ExtResource( 1 )
+text = "Good morning for walking a mech, isn't it!
+You can do that by pressing [w] and [s] on the keyboard."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="DialogueBox"]
+position = Vector2( 66.225, 99.8116 )
+scale = Vector2( 0.735404, 0.735404 )
+texture = ExtResource( 2 )
