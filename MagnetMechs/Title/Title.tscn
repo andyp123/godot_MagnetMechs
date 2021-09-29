@@ -214,7 +214,7 @@ target_node = NodePath("../../FootTarget_Right")
 [node name="Mech" type="MeshInstance" parent="PlayerMech/Armature/Skeleton"]
 mesh = SubResource( 7 )
 skin = SubResource( 8 )
-material/0 = null
+material/0 = ExtResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="PlayerMech/Armature"]
 collision_layer = 0
