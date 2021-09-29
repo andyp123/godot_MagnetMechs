@@ -1,24 +1,27 @@
 extends Spatial
+class_name RescueZone
 
+export var required_type: String = "Rescue Pod"
 export var required_rescues: int = 3
+export var mission_critical: bool = true
 var current_rescues: int = 0
 
 onready var detector = $Detector
 
+signal cargo_entered
+signal cargo_exited
+
 func _ready() -> void:
 	detector.connect("cargo_hovered", self, "_cargo_hover")
 	detector.connect("cargo_unhovered", self, "_cargo_hover")
-	
+
 func _cargo_hover(cargo: Cargo, hovered: bool) -> void:
-	if cargo.type_name == "Rescue Pod":
+	if cargo.type_name == required_type:
 		if hovered:
 			current_rescues += 1
-			if current_rescues >= required_rescues:
-				print("YEEEEEAAASS! I CAN FEEL MY POWER SURGING!")
-			else:
-				print("YES! ANOTHER VICTIM TO THE SLAUGHTER! BRING ME MORE AND YOU WILL BE REWARDED!")
+			emit_signal("cargo_entered", self, cargo)
 		else:
 			current_rescues -= 1
-			print("YOU DARE STEAL FROM THE ALL POWERFUL MHATOMBATHUMBYWUMP!?")
+			emit_signal("cargo_exited", self, cargo)
 	
 

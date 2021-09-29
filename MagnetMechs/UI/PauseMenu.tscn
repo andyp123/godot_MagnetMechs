@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Font_Large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/PauseMenu.gd" type="Script" id=3]
+[ext_resource path="res://UI/cheat-sheet.png" type="Texture" id=4]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItems" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 335.0
+margin_top = 218.0
+margin_right = 689.0
+margin_bottom = 549.0
+
+[node name="Label" type="Label" parent="CenterContainer/MenuItems"]
+margin_right = 354.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Paused"
+align = 1
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 64.0
+margin_right = 354.0
+margin_bottom = 121.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 125.0
+margin_right = 354.0
+margin_bottom = 182.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Retry Mission"
+
+[node name="HelpButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 186.0
+margin_right = 354.0
+margin_bottom = 243.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Controls"
+
+[node name="SpacerLabel" type="Label" parent="CenterContainer/MenuItems"]
+margin_top = 247.0
+margin_right = 354.0
+margin_bottom = 261.0
+
+[node name="ReturnToTitleButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 265.0
+margin_right = 354.0
+margin_bottom = 296.0
+theme = ExtResource( 1 )
+text = "Quit to Title"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 300.0
+margin_right = 354.0
+margin_bottom = 331.0
+theme = ExtResource( 1 )
+text = "Quit"
+
+[node name="HelpPanel" type="Panel" parent="CenterContainer"]
+visible = false
+margin_left = 512.0
+margin_top = 384.0
+margin_right = 512.0
+margin_bottom = 384.0
+
+[node name="Sprite" type="Sprite" parent="CenterContainer/HelpPanel"]
+texture = ExtResource( 4 )
+
+[node name="ReturnButton" type="Button" parent="CenterContainer/HelpPanel"]
+margin_left = -492.379
+margin_top = -365.498
+margin_right = -363.379
+margin_bottom = -325.498
+theme = ExtResource( 1 )
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tree_exiting" from="." to="." method="_on_PauseMenu_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/ReturnToTitleButton" to="." method="_on_ReturnToTitleButton_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="CenterContainer/HelpPanel/ReturnButton" to="." method="_on_ReturnButton_pressed"]

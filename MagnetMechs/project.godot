@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Spatial",
+"class": "RescueZone",
+"language": "GDScript",
+"path": "res://Cargo/RescueZone.gd"
 } ]
 _global_script_class_icons={
 "Cargo": "",
 "Detector": "",
 "MechWalker": "",
-"Player": ""
+"Player": "",
+"RescueZone": ""
 }
 
 [application]
@@ -57,6 +63,22 @@ window/size/resizable=false
 
 [input]
 
+ui_page_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_page_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_home={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_end={
+"deadzone": 0.5,
+"events": [  ]
+}
 move_forward={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)

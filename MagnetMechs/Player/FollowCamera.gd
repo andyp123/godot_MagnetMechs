@@ -25,7 +25,7 @@ var target: Spatial = null
 var is_following = true
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	max_rotation_x = deg2rad(clamp(max_rotation_x, 0, 90))
 	follow_distance = clamp(follow_distance, follow_distance_min, follow_distance_max)
@@ -71,14 +71,14 @@ func _get_spring_force() -> Vector3:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		look_input = event.relative
-	elif event is InputEventKey:
-		if event.scancode == KEY_P and event.pressed and !event.echo:
-			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			else:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		elif event.scancode == KEY_ESCAPE:
-			get_tree().quit()
+#	elif event is InputEventKey:
+#		if event.scancode == KEY_P and event.pressed and !event.echo:
+#			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+#				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#			else:
+#				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#		elif event.scancode == KEY_ESCAPE:
+#			get_tree().quit()
 	elif event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == BUTTON_WHEEL_UP: # zoom in
 			follow_distance -= 1

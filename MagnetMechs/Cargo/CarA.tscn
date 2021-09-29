@@ -3,7 +3,7 @@
 [ext_resource path="res://Cargo/Cargo.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=4]
-friction = 0.8
+friction = 0.75
 rough = true
 bounce = 0.2
 absorbent = true
@@ -36,7 +36,8 @@ collision_mask = 15
 physics_material_override = SubResource( 4 )
 gravity_scale = 2.0
 continuous_cd = true
-angular_damp = 2.0
+linear_damp = 2.0
+angular_damp = 4.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

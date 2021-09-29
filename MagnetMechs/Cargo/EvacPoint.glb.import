@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/EvacPoint.glb-a11e4746b8a21bfc16539e706b356069.scn"
+path="res://.import/EvacPoint.glb-3010086bb3f386bc7c3b496f8d1d7575.scn"
 
 [deps]
 
-source_file="res://Environment/EvacPoint.glb"
-dest_files=[ "res://.import/EvacPoint.glb-a11e4746b8a21bfc16539e706b356069.scn" ]
+source_file="res://Cargo/EvacPoint.glb"
+dest_files=[ "res://.import/EvacPoint.glb-3010086bb3f386bc7c3b496f8d1d7575.scn" ]
 
 [params]
 

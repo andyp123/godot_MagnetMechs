@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Font_Large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/LevelClearUI.gd" type="Script" id=3]
+
+[node name="LevelClearUI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItems" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 333.0
+margin_top = 267.0
+margin_right = 690.0
+margin_bottom = 501.0
+
+[node name="Label" type="Label" parent="CenterContainer/MenuItems"]
+margin_right = 357.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Mission Clear!"
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/MenuItems"]
+margin_top = 64.0
+margin_right = 357.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 0, 60 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
+text = "Congratulations on a job well
+done. Let's try the next one!
+
+"
+align = 1
+
+[node name="NextButton" type="Button" parent="CenterContainer/MenuItems"]
+margin_top = 177.0
+margin_right = 357.0
+margin_bottom = 234.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Next Mission"
+
+[connection signal="tree_exiting" from="." to="." method="_on_PauseMenu_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
+[connection signal="pressed" from="CenterContainer/MenuItems/NextButton" to="." method="_on_NextButton_pressed"]

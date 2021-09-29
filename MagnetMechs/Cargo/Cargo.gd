@@ -13,6 +13,7 @@ var spring_constant: float = 400
 var spring_coupling_distance: float = 2
 var spring_target_offset: Vector3 = Vector3.ZERO
 var spring_target
+onready var inv_mass: float = 1.0 / weight_units
 
 signal uncoupled
 
@@ -46,7 +47,6 @@ func attach_to_target(target: Spatial, target_offset: Vector3 = Vector3.ZERO):
 	for c in get_children():
 		if c is CollisionShape:
 			c.disabled = !is_rigid
-#	$CollisionShape.disabled = !is_rigid
 	can_sleep = is_rigid
 
 	if emit_uncoupled:
@@ -55,7 +55,7 @@ func attach_to_target(target: Spatial, target_offset: Vector3 = Vector3.ZERO):
 
 func _physics_process(delta: float) -> void:	
 	if spring_target != null:
-		velocity += _get_spring_force() * delta
+		velocity += _get_spring_force() * delta * inv_mass
 		translation += velocity * delta
 
 		var a := Quat(rotation)
