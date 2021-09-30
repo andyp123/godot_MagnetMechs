@@ -180,7 +180,7 @@ skeleton = NodePath("../..")
 
 [node name="TUT_Move" parent="." index="12" instance=ExtResource( 15 )]
 transform = Transform( 6.33781, 0, 0, 0, 3.59558, 0, 0, 0, 3.59558, 0.0445875, 1.56837, -12.4221 )
-messages = [ "It's a good morning for walking a mech, isn't it!", "You can do that by pressing [color=#FFAA44]W[/color] and  [color=#FFAA44]S[/color] on the keyboard.", "Turn left with [color=#FFAA44]A[/color] and right with [color=#FFAA44]D[/color]", "Use the [color=#FFAA44]mouse[/color] to rotate the view, and zoom in and out with the wheel.", "I created that thing to help myself climb stairs. Never got around to putting in real controls." ]
+messages = [ "It looks like there are 3 Rescue Pods in this area." ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="13"]
 transform = Transform( -0.854323, -0.0424732, 0.518004, 0.506772, -0.289337, 0.812075, 0.115386, 0.956285, 0.268711, 0, 16.3704, 0 )
