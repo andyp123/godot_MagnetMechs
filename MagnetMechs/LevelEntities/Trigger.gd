@@ -9,7 +9,6 @@ var activated = false
 func _on_Trigger_body_entered(body: Node) -> void:
 	if body is Player and !activated:
 		var player: Player = body
-		print(player.hud)
 		player.hud.set_dialogue(messages, char_name)
 		activated = true
 

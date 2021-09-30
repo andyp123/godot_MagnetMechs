@@ -1,10 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/FollowCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerMech.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WorldGrid.tres" type="Material" id=3]
 [ext_resource path="res://Terrain.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cargo/RescuePod.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Environment/road_broken_A.scn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/underground_wall_pipe.scn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/underground_ground_A.scn" type="PackedScene" id=8]
+[ext_resource path="res://Environment/underground_wall.scn" type="PackedScene" id=9]
+[ext_resource path="res://Environment/road_broken_B.scn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/pipe_straight.scn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.5, 0.5, 0.5 )
@@ -22,7 +28,7 @@ size = Vector3( 1, 1, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
-transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 19.0998 )
+transform = Transform( 43.8478, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 19.0998 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -166,8 +172,42 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7312, 3.86197, 1.61397 )
 [node name="RescuePod3" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279855, 1.22037, 1.08838 )
 
+[node name="PlayerMech" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61728, 5.58293 )
+
 [node name="FollowCamera" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.98046, 0.196716, 0, -0.196716, 0.98046, 0, 5.01689, 11.0905 )
 
-[node name="PlayerMech" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61728, 5.58293 )
+[node name="underground_wall" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 29.5, 4.5, 26 )
+
+[node name="underground_wall2" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 29.5, 4.5, 6 )
+
+[node name="road_broken_A" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 4.5, 33 )
+
+[node name="underground_ground_A" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, -0.5, 16 )
+
+[node name="underground_ground_A2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, -0.5, 6 )
+
+[node name="underground_ground_A3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, -0.5, 26 )
+
+[node name="pipe_straight" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1.5, 16 )
+skeleton = NodePath("../underground_ground_A3")
+
+[node name="underground_wall_pipe" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 29.5, 4.5, 16 )
+skeleton = NodePath("../underground_wall")
+
+[node name="underground_wall_pipe2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 44.5, 4.5, 16 )
+skeleton = NodePath("../underground_wall")
+
+[node name="road_broken_B" parent="." instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 24.5, 4.5, 1 )
+skeleton = NodePath("../underground_wall2")
