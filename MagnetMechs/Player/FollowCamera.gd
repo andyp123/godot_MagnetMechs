@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var follow_distance_max: float = 10
-export var follow_distance_min: float = 3
+export var follow_distance_min: float = 4
 export var follow_distance: float = 6
 
 # Spring settings

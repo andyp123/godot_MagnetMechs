@@ -253,11 +253,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 516.31
-margin_top = 412.039
-margin_right = 815.31
-margin_bottom = 504.039
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 651.129
+margin_top = 584.233
+margin_right = 950.129
+margin_bottom = 694.233
 alignment = 1
 __meta__ = {
 "_edit_group_": true,
@@ -271,18 +270,23 @@ theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 8 )
 text = "Start Game"
 
-[node name="CreditsButton" type="Button" parent="Control/VBoxContainer"]
-visible = false
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
 margin_top = 61.0
 margin_right = 299.0
-margin_bottom = 92.0
+margin_bottom = 75.0
+
+[node name="CreditsButton" type="Button" parent="Control/VBoxContainer"]
+visible = false
+margin_top = 79.0
+margin_right = 299.0
+margin_bottom = 110.0
 theme = ExtResource( 4 )
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 61.0
+margin_top = 79.0
 margin_right = 299.0
-margin_bottom = 92.0
+margin_bottom = 110.0
 theme = ExtResource( 4 )
 text = "Quit Game"
 
@@ -291,6 +295,7 @@ margin_left = 12.0
 margin_top = 12.0
 margin_right = 367.0
 margin_bottom = 43.0
+rect_scale = Vector2( 0.7, 0.7 )
 focus_mode = 0
 theme = ExtResource( 4 )
 shortcut_in_tooltip = false

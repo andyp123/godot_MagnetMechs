@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 				cargo_stack.append(cargo)
 				_adjust_cargo_collider()
 	
-	if Input.is_action_just_pressed("drop"):
+	if Input.is_action_just_pressed("drop") and !cargo_stack.empty():
 		var cargo: Cargo = cargo_stack.back()
 		if cargo:
 			cargo_stack.erase(cargo)
@@ -135,6 +135,12 @@ func _adjust_cargo_collider() -> void:
 	detector.translation.y = -stack_size - 0.5
 
 # Helper functions
+func has_cargo(type_name: String) -> bool:
+	for c in cargo_stack:
+		if c.type_name == type_name:
+			return true
+	return false
+
 func _get_spring_force() -> Vector3:
 	return -spring_friction * velocity - spring_constant * (translation - spring_target)
 

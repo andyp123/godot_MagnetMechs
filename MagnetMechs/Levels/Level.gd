@@ -17,6 +17,8 @@ var rescue_zones
 var required_rescues = 0
 var current_rescues = 0
 
+export var mission_clear_message = "Well done! I knew you could figure it out."
+
 
 func restart_level() -> void:
 	get_tree().reload_current_scene()
@@ -59,7 +61,7 @@ func _on_rescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 func complete_level() -> void:
 	pause_menu.hide() # just in case
 	level_clear_ui.show()
-	player.hud.set_dialogue(["Well done!\nI knew you could figure it out."])
+	player.hud.set_dialogue([mission_clear_message])
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_unrescue(rescue_zone: RescueZone, cargo: Cargo) -> void:

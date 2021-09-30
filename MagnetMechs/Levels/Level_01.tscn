@@ -178,6 +178,9 @@ skeleton = NodePath("../..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, 20 )
 skeleton = NodePath("../..")
 
+[node name="LevelControl_NoPause" parent="." index="11"]
+mission_clear_message = "Another job well done!"
+
 [node name="TUT_Move" parent="." index="12" instance=ExtResource( 15 )]
 transform = Transform( 6.33781, 0, 0, 0, 3.59558, 0, 0, 0, 3.59558, 0.0445875, 1.56837, -12.4221 )
 messages = [ "It looks like there are 3 Rescue Pods in this area." ]

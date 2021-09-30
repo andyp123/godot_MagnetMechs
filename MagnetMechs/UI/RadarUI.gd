@@ -1,6 +1,6 @@
 extends Control
 
-export var tracking_radius: float = 20 # radius around player in meters
+export var tracking_radius: float = 25 # radius around player in meters
 export var radar_radius: float = 96 # radius of sprite in pixels
 onready var marker_template = $MarkerSprite
 

@@ -388,6 +388,7 @@ messages = [ "Position the mech's body over the Rescue Pod. A message will appea
 [node name="TUT_RescuePod3" parent="." index="10" instance=ExtResource( 5 )]
 transform = Transform( -0.00519569, 3.064e-07, 5.59885, -2.6914e-07, 2.97883, -5.78362e-07, 1.78242, 4.50685e-07, 0.0163204, -49.0808, 5.06419, 46.9817 )
 messages = [ "Excellent, the [color=#FFAA44]Evac Point[/color] is right there!", "Walk onto the [color=#FFAA44]Evac Point[/color] and press [color=#FFAA44]R[/color] to drop the Rescue Pod." ]
+required_item = "Rescue Pod"
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="11"]
 transform = Transform( -0.854323, -0.0424732, 0.518004, 0.506772, -0.289337, 0.812075, 0.115386, 0.956285, 0.268711, 0, 16.3704, 0 )
