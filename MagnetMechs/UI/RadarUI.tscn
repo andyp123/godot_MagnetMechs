@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/RadarUI.gd" type="Script" id=1]
+[ext_resource path="res://UI/radar.png" type="Texture" id=2]
+[ext_resource path="res://UI/radar_dots.png" type="Texture" id=3]
+
+[node name="RadarUI" type="Control"]
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RadarSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="MarkerSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 16.9897, -28.3162 )
+texture = ExtResource( 3 )
+hframes = 4
+vframes = 2
+frame = 3

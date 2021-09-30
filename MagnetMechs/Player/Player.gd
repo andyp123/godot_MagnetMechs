@@ -1,6 +1,9 @@
 extends KinematicBody
 class_name Player
 
+export (PackedScene) var hud_template
+var hud
+
 # Base settings
 export var max_speed: float = 6
 export var turn_rate: float = deg2rad(120)
@@ -35,6 +38,9 @@ onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gra
 var velocity: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
+	hud = hud_template.instance()
+	add_child(hud)
+	
 	detector.connect("cargo_hovered", self, "_cargo_hover")
 	detector.connect("cargo_unhovered", self, "_cargo_hover")
 	cargo_ui = cargo_ui_template.instance()

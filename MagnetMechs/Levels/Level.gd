@@ -28,6 +28,8 @@ func proceed_to_next_level() -> void:
 	get_tree().change_scene(next_scene)
 
 func _ready() -> void:
+	player = get_tree().get_nodes_in_group("players")[0]
+	
 	rescue_zones = get_tree().get_nodes_in_group("rescue_zones")
 	for zone in rescue_zones:
 		if zone.mission_critical:
@@ -51,10 +53,14 @@ func _ready() -> void:
 func _on_rescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 	current_rescues += 1
 	if current_rescues >= required_rescues:
-		pause_menu.hide() # just in case
-		level_clear_ui.show()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		complete_level()
 
+
+func complete_level() -> void:
+	pause_menu.hide() # just in case
+	level_clear_ui.show()
+	player.hud.set_dialogue(["Well done!\nI knew you could figure it out."])
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_unrescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 	current_rescues -= 1
