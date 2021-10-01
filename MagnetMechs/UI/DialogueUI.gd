@@ -18,7 +18,7 @@ func set_dialogue(new_dialogue, char_name: String = "") -> void:
 		name_label.text = char_name
 	show()
 	
-	var time = min(min_dialogue_time, time_per_character * dialogue_box.bbcode_text.length())
+	var time = max(min_dialogue_time, time_per_character * dialogue_box.bbcode_text.length())
 	timer.start(time)
 
 
@@ -31,7 +31,7 @@ func _on_TextTimer_timeout() -> void:
 	dialogue_index += 1
 	if dialogue_index < dialogue.size():
 		dialogue_box.bbcode_text = dialogue[dialogue_index]
-		var time = min(min_dialogue_time, time_per_character * dialogue_box.bbcode_text.length())
+		var time = max(min_dialogue_time, time_per_character * dialogue_box.bbcode_text.length())
 		timer.start(time)
 	else:
 		hide()
