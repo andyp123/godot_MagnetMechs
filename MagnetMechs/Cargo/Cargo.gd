@@ -6,6 +6,7 @@ onready var mesh = $Mesh
 # Info to be displayed by cargo popup
 export var type_name: String = "<Missing>"
 export var weight_units: int = 1
+export var expiry_time: int = -1
 
 # Spring settings
 var spring_friction: float = 4

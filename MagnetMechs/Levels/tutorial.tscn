@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player/FollowCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environment/road_broken_A.scn" type="PackedScene" id=2]
@@ -16,6 +16,40 @@
 [ext_resource path="res://Environment/road_straight.scn" type="PackedScene" id=14]
 [ext_resource path="res://Cargo/RescueZone.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Cargo/RescuePod.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Environment/building_awning_B.scn" type="PackedScene" id=17]
+[ext_resource path="res://Environment/building_awning_A.scn" type="PackedScene" id=18]
+[ext_resource path="res://Environment/building_10x5_A.scn" type="PackedScene" id=19]
+[ext_resource path="res://Environment/building_10x5_B.scn" type="PackedScene" id=20]
+[ext_resource path="res://Environment/building_5x5x75A.scn" type="PackedScene" id=21]
+[ext_resource path="res://Environment/roof_peaked_10x5m.scn" type="PackedScene" id=22]
+[ext_resource path="res://Environment/drainpipe_10m.scn" type="PackedScene" id=23]
+[ext_resource path="res://Environment/building_5x5_top_B.scn" type="PackedScene" id=24]
+[ext_resource path="res://Environment/building_5x5x10_B.scn" type="PackedScene" id=25]
+[ext_resource path="res://Environment/building_floor_5x5.scn" type="PackedScene" id=26]
+[ext_resource path="res://Environment/roof_peaked_5x5m.scn" type="PackedScene" id=27]
+[ext_resource path="res://Environment/building_5x5_A.scn" type="PackedScene" id=28]
+[ext_resource path="res://Environment/building_5x5_roof_B.scn" type="PackedScene" id=29]
+[ext_resource path="res://Environment/building_5x5x10_A.scn" type="PackedScene" id=30]
+[ext_resource path="res://Environment/underground_wall_corner_outer.scn" type="PackedScene" id=31]
+[ext_resource path="res://Environment/underground_wall_corner_inner.scn" type="PackedScene" id=32]
+
+[sub_resource type="ProceduralSky" id=43]
+sky_top_color = Color( 0.482353, 0.721569, 0.854902, 1 )
+sky_horizon_color = Color( 0.952941, 0.870588, 0.768627, 1 )
+
+[sub_resource type="Environment" id=44]
+background_mode = 2
+background_sky = SubResource( 43 )
+fog_enabled = true
+fog_color = Color( 0.486275, 0.564706, 0.568627, 1 )
+fog_depth_begin = 25.0
+fog_height_enabled = true
+fog_height_min = -5.0
+fog_height_max = -10.0
+fog_height_curve = 0.615572
+adjustment_brightness = 1.12
+adjustment_contrast = 1.05
+adjustment_saturation = 1.21
 
 [node name="LevelRoot" instance=ExtResource( 6 )]
 
@@ -47,283 +81,287 @@ skeleton = NodePath("../..")
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10, 0, -30 )
 skeleton = NodePath("../..")
 
-[node name="building_10x17" parent="LevelGeometry" index="5" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10, 0, -10 )
+[node name="building_10x18" parent="LevelGeometry" index="5" instance=ExtResource( 4 )]
+transform = Transform( -0.999999, 0.000595848, -0.00124094, 0.000594484, 0.999999, 0.00110164, 0.0012416, 0.0011009, -0.999999, -10, 0, 3.8147e-06 )
 skeleton = NodePath("../..")
 
-[node name="building_10x18" parent="LevelGeometry" index="6" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10, 0, 3.8147e-06 )
-skeleton = NodePath("../..")
-
-[node name="building_10x21" parent="LevelGeometry" index="7" instance=ExtResource( 4 )]
+[node name="building_10x21" parent="LevelGeometry" index="6" instance=ExtResource( 4 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 10, 0, 10 )
 skeleton = NodePath("../..")
 
-[node name="building_10x22" parent="LevelGeometry" index="8" instance=ExtResource( 4 )]
+[node name="building_10x22" parent="LevelGeometry" index="7" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 10, 0, 20 )
 skeleton = NodePath("../..")
 
-[node name="building_10x23" parent="LevelGeometry" index="9" instance=ExtResource( 4 )]
+[node name="building_10x23" parent="LevelGeometry" index="8" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -20, 0, 20 )
 skeleton = NodePath("../..")
 
-[node name="building_10x27" parent="LevelGeometry" index="10" instance=ExtResource( 4 )]
+[node name="building_10x27" parent="LevelGeometry" index="9" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -20, 0, 30 )
 skeleton = NodePath("../..")
 
-[node name="building_10x28" parent="LevelGeometry" index="11" instance=ExtResource( 4 )]
+[node name="building_10x28" parent="LevelGeometry" index="10" instance=ExtResource( 4 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -20, 0, 40 )
 skeleton = NodePath("../..")
 
-[node name="building_10x29" parent="LevelGeometry" index="12" instance=ExtResource( 4 )]
+[node name="building_10x29" parent="LevelGeometry" index="11" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -20, 0, 50 )
 skeleton = NodePath("../..")
 
-[node name="building_10x30" parent="LevelGeometry" index="13" instance=ExtResource( 4 )]
+[node name="building_10x30" parent="LevelGeometry" index="12" instance=ExtResource( 4 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -20, 0, 60 )
 skeleton = NodePath("../..")
 
-[node name="building_10x31" parent="LevelGeometry" index="14" instance=ExtResource( 4 )]
+[node name="building_10x31" parent="LevelGeometry" index="13" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -30, 0, 65 )
 skeleton = NodePath("../..")
 
-[node name="building_10x40" parent="LevelGeometry" index="15" instance=ExtResource( 4 )]
+[node name="building_10x40" parent="LevelGeometry" index="14" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -40, 0, 65 )
 skeleton = NodePath("../..")
 
-[node name="building_10x41" parent="LevelGeometry" index="16" instance=ExtResource( 4 )]
+[node name="building_10x41" parent="LevelGeometry" index="15" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -50, 2.5, 65 )
 skeleton = NodePath("../..")
 
-[node name="building_10x24" parent="LevelGeometry" index="17" instance=ExtResource( 4 )]
+[node name="building_10x24" parent="LevelGeometry" index="16" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -20, 0, 10 )
 skeleton = NodePath("../..")
 
-[node name="building_10x25" parent="LevelGeometry" index="18" instance=ExtResource( 4 )]
+[node name="building_10x25" parent="LevelGeometry" index="17" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -40, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="building_10x38" parent="LevelGeometry" index="19" instance=ExtResource( 4 )]
+[node name="building_10x38" parent="LevelGeometry" index="18" instance=ExtResource( 4 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -45, 2.5, 25 )
 skeleton = NodePath("../..")
 
-[node name="building_10x39" parent="LevelGeometry" index="20" instance=ExtResource( 4 )]
+[node name="building_10x39" parent="LevelGeometry" index="19" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -55, 2.5, 25 )
 skeleton = NodePath("../..")
 
-[node name="building_10x32" parent="LevelGeometry" index="21" instance=ExtResource( 4 )]
+[node name="building_10x32" parent="LevelGeometry" index="20" instance=ExtResource( 4 )]
 transform = Transform( 4.33126e-07, 0, -1, 0, 1, 0, 1, 0, 4.33126e-07, -40, 0, 35 )
 skeleton = NodePath("../..")
 
-[node name="building_10x35" parent="LevelGeometry" index="22" instance=ExtResource( 4 )]
-transform = Transform( -5.20549e-07, 0, 1, 0, 1, 0, -1, 0, -5.20549e-07, -60, 2.5, 35 )
+[node name="building_10x35" parent="LevelGeometry" index="21" instance=ExtResource( 4 )]
+transform = Transform( 5.52335e-07, 0, -1, 0, 1, 0, 1, 0, 5.52335e-07, -60, 2.5, 35 )
 skeleton = NodePath("../..")
 
-[node name="building_10x36" parent="LevelGeometry" index="23" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, -60, 2.5, 45 )
+[node name="building_10x36" parent="LevelGeometry" index="22" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -6.27833e-07, 0, 1, 0, 6.27833e-07, 0, -1, -60, 2.5, 45 )
 skeleton = NodePath("../..")
 
-[node name="building_10x37" parent="LevelGeometry" index="24" instance=ExtResource( 4 )]
+[node name="building_10x37" parent="LevelGeometry" index="23" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, -60, 2.5, 55 )
 skeleton = NodePath("../..")
 
-[node name="building_10x34" parent="LevelGeometry" index="25" instance=ExtResource( 4 )]
+[node name="building_10x34" parent="LevelGeometry" index="24" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 4.76837e-07, 0, 1, 0, -4.76837e-07, 0, 1, -40, 0, 45 )
 skeleton = NodePath("../..")
 
-[node name="building_10x33" parent="LevelGeometry" index="26" instance=ExtResource( 4 )]
+[node name="building_10x33" parent="LevelGeometry" index="25" instance=ExtResource( 4 )]
 transform = Transform( 4.33126e-07, 0, -1, 0, 1, 0, 1, 0, 4.33126e-07, -40, 0, 5 )
 skeleton = NodePath("../..")
 
-[node name="building_10x26" parent="LevelGeometry" index="27" instance=ExtResource( 4 )]
+[node name="building_10x26" parent="LevelGeometry" index="26" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -40, 0, 15 )
 skeleton = NodePath("../..")
 
-[node name="building_10x14" parent="LevelGeometry" index="28" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 10, 0, -10 )
-skeleton = NodePath("../..")
-
-[node name="building_10x15" parent="LevelGeometry" index="29" instance=ExtResource( 4 )]
+[node name="building_10x15" parent="LevelGeometry" index="27" instance=ExtResource( 4 )]
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 10, 0, 0 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A" parent="LevelGeometry" index="30" instance=ExtResource( 3 )]
+[node name="underground_ground_A" parent="LevelGeometry" index="28" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -10 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A2" parent="LevelGeometry" index="31" instance=ExtResource( 3 )]
+[node name="underground_ground_A2" parent="LevelGeometry" index="29" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A3" parent="LevelGeometry" index="32" instance=ExtResource( 3 )]
+[node name="underground_ground_A3" parent="LevelGeometry" index="30" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -20 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall" parent="LevelGeometry" index="33" instance=ExtResource( 8 )]
+[node name="underground_wall" parent="LevelGeometry" index="31" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall9" parent="LevelGeometry" index="34" instance=ExtResource( 8 )]
+[node name="underground_wall9" parent="LevelGeometry" index="32" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 5 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall2" parent="LevelGeometry" index="35" instance=ExtResource( 8 )]
+[node name="underground_wall2" parent="LevelGeometry" index="33" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall3" parent="LevelGeometry" index="36" instance=ExtResource( 8 )]
+[node name="underground_wall3" parent="LevelGeometry" index="34" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall4" parent="LevelGeometry" index="37" instance=ExtResource( 8 )]
+[node name="underground_wall4" parent="LevelGeometry" index="35" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, -1.50996e-06 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A5" parent="LevelGeometry" index="38" instance=ExtResource( 3 )]
+[node name="underground_ground_A5" parent="LevelGeometry" index="36" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 10 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall10" parent="LevelGeometry" index="39" instance=ExtResource( 8 )]
+[node name="underground_wall10" parent="LevelGeometry" index="37" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, 10 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A6" parent="LevelGeometry" index="40" instance=ExtResource( 3 )]
+[node name="underground_ground_A6" parent="LevelGeometry" index="38" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 20 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A7" parent="LevelGeometry" index="41" instance=ExtResource( 3 )]
+[node name="underground_ground_A7" parent="LevelGeometry" index="39" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 10 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A8" parent="LevelGeometry" index="42" instance=ExtResource( 3 )]
+[node name="underground_ground_A8" parent="LevelGeometry" index="40" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 20 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A9" parent="LevelGeometry" index="43" instance=ExtResource( 3 )]
+[node name="underground_ground_A9" parent="LevelGeometry" index="41" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -5, 15 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall11" parent="LevelGeometry" index="44" instance=ExtResource( 8 )]
+[node name="underground_ground_A12" parent="LevelGeometry" index="42" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -5, 15 )
+skeleton = NodePath("../..")
+
+[node name="underground_wall11" parent="LevelGeometry" index="43" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, 20 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall13" parent="LevelGeometry" index="45" instance=ExtResource( 8 )]
+[node name="underground_wall13" parent="LevelGeometry" index="44" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -15, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall16" parent="LevelGeometry" index="46" instance=ExtResource( 8 )]
+[node name="underground_wall16" parent="LevelGeometry" index="45" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -35, 0, 15 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A11" parent="LevelGeometry" index="47" instance=ExtResource( 3 )]
+[node name="underground_ground_A11" parent="LevelGeometry" index="46" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -5, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall18" parent="LevelGeometry" index="48" instance=ExtResource( 8 )]
+[node name="underground_wall18" parent="LevelGeometry" index="47" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -35, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall19" parent="LevelGeometry" index="49" instance=ExtResource( 8 )]
+[node name="underground_wall19" parent="LevelGeometry" index="48" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -25, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall_pipe" parent="LevelGeometry" index="50" instance=ExtResource( 10 )]
+[node name="underground_wall_pipe" parent="LevelGeometry" index="49" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -15, 0, 15 )
 skeleton = NodePath("../underground_wall14")
 
-[node name="underground_wall_pipe2" parent="LevelGeometry" index="51" instance=ExtResource( 10 )]
+[node name="underground_wall_pipe2" parent="LevelGeometry" index="50" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -25, 0, 15 )
 skeleton = NodePath("../underground_wall14")
 
-[node name="underground_wall14" parent="LevelGeometry" index="52" instance=ExtResource( 8 )]
+[node name="underground_wall14" parent="LevelGeometry" index="51" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -15, 0, 5 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall12" parent="LevelGeometry" index="53" instance=ExtResource( 8 )]
+[node name="underground_wall12" parent="LevelGeometry" index="52" instance=ExtResource( 8 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3.8147e-06, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall15" parent="LevelGeometry" index="54" instance=ExtResource( 8 )]
+[node name="underground_wall15" parent="LevelGeometry" index="53" instance=ExtResource( 8 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10, 0, 25 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall5" parent="LevelGeometry" index="55" instance=ExtResource( 8 )]
+[node name="underground_wall5" parent="LevelGeometry" index="54" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, -10 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall6" parent="LevelGeometry" index="56" instance=ExtResource( 8 )]
+[node name="underground_wall6" parent="LevelGeometry" index="55" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, -20 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A4" parent="LevelGeometry" index="57" instance=ExtResource( 3 )]
+[node name="underground_ground_A4" parent="LevelGeometry" index="56" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -30 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall7" parent="LevelGeometry" index="58" instance=ExtResource( 8 )]
+[node name="underground_wall7" parent="LevelGeometry" index="57" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -30 )
 skeleton = NodePath("../..")
 
-[node name="underground_wall8" parent="LevelGeometry" index="59" instance=ExtResource( 8 )]
+[node name="underground_wall8" parent="LevelGeometry" index="58" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, -30 )
 skeleton = NodePath("../..")
 
-[node name="road_broken_A" parent="LevelGeometry" index="60" instance=ExtResource( 2 )]
+[node name="road_broken_A" parent="LevelGeometry" index="59" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -4.52987e-06, 0, -35 )
 skeleton = NodePath("../..")
 
-[node name="road_broken_A2" parent="LevelGeometry" index="61" instance=ExtResource( 2 )]
+[node name="road_broken_A2" parent="LevelGeometry" index="60" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -30, 0, 6 )
 skeleton = NodePath("../..")
 
-[node name="rubble" parent="LevelGeometry" index="62" instance=ExtResource( 9 )]
+[node name="rubble" parent="LevelGeometry" index="61" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5.5, -5, -5.28485e-07 )
 skeleton = NodePath("../..")
 
-[node name="rubble5" parent="LevelGeometry" index="63" instance=ExtResource( 9 )]
+[node name="rubble5" parent="LevelGeometry" index="62" instance=ExtResource( 9 )]
 transform = Transform( -1.4, 0, -1.50996e-07, 0, 1.4, 0, 2.11394e-07, 0, -1, 5.5, -5, 12 )
 skeleton = NodePath("../..")
 
-[node name="rubble4" parent="LevelGeometry" index="64" instance=ExtResource( 9 )]
+[node name="rubble4" parent="LevelGeometry" index="63" instance=ExtResource( 9 )]
 transform = Transform( -2.19072, 0, 0.427051, 0, 1, 0, -0.587001, 0, -1.59378, 5.83652, -5, 20.2418 )
 skeleton = NodePath("../..")
 
-[node name="rubble3" parent="LevelGeometry" index="65" instance=ExtResource( 9 )]
+[node name="rubble3" parent="LevelGeometry" index="64" instance=ExtResource( 9 )]
 transform = Transform( 5.33658e-07, 0, 1.2584, 0, 1, 0, 1.7, 0, -3.95033e-07, -11.682, -5, 4.90381 )
 skeleton = NodePath("../..")
 
-[node name="rubble6" parent="LevelGeometry" index="66" instance=ExtResource( 9 )]
+[node name="rubble6" parent="LevelGeometry" index="65" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1496, -5, 17.4972 )
 skeleton = NodePath("../..")
 
-[node name="rubble7" parent="LevelGeometry" index="67" instance=ExtResource( 9 )]
+[node name="rubble7" parent="LevelGeometry" index="66" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -25.6496, 0, 49.4972 )
 skeleton = NodePath("../..")
 
-[node name="rubble8" parent="LevelGeometry" index="68" instance=ExtResource( 9 )]
+[node name="rubble13" parent="LevelGeometry" index="67" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -25.6496, 0, -11.0028 )
+skeleton = NodePath("../..")
+
+[node name="rubble14" parent="LevelGeometry" index="68" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -34.6496, 0, 1.4972 )
+skeleton = NodePath("../..")
+
+[node name="rubble8" parent="LevelGeometry" index="69" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -40.1496, 2.5, 41.9972 )
 skeleton = NodePath("../..")
 
-[node name="rubble11" parent="LevelGeometry" index="69" instance=ExtResource( 9 )]
+[node name="rubble11" parent="LevelGeometry" index="70" instance=ExtResource( 9 )]
 transform = Transform( -1.62921e-07, 0.340888, 0.940104, 0, 0.940104, -0.340888, -1, -5.55378e-08, -1.53162e-07, -39.3355, 0.982261, 59.869 )
 skeleton = NodePath("../..")
 
-[node name="rubble12" parent="LevelGeometry" index="70" instance=ExtResource( 9 )]
+[node name="rubble12" parent="LevelGeometry" index="71" instance=ExtResource( 9 )]
 transform = Transform( 3.0311e-07, 0.340888, -0.9797, -2.98014e-08, 0.940104, 0.355246, 1, -7.53103e-08, 3.07544e-07, -39.3355, 0.982261, 50.2091 )
 skeleton = NodePath("../..")
 
-[node name="rubble9" parent="LevelGeometry" index="71" instance=ExtResource( 9 )]
+[node name="rubble9" parent="LevelGeometry" index="72" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -45.1496, 2.5, 34.9972 )
 skeleton = NodePath("../..")
 
-[node name="rubble10" parent="LevelGeometry" index="72" instance=ExtResource( 9 )]
+[node name="rubble10" parent="LevelGeometry" index="73" instance=ExtResource( 9 )]
 transform = Transform( 2.45331e-07, 0, -1.26, 0, 1, 0, 1.26, 0, 2.45331e-07, -50.1496, 2.5, 30.4972 )
 skeleton = NodePath("../..")
 
-[node name="rubble2" parent="LevelGeometry" index="73" instance=ExtResource( 9 )]
+[node name="rubble2" parent="LevelGeometry" index="74" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 2.38419e-07, 0, 0.9, 0, -2.38419e-07, 0, 1, -5, -5, -6.5 )
 skeleton = NodePath("../..")
 
-[node name="underground_ground_A10" parent="LevelGeometry" index="74" instance=ExtResource( 3 )]
+[node name="underground_ground_A10" parent="LevelGeometry" index="75" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -30, -5, 35 )
 skeleton = NodePath("../..")
 
@@ -331,69 +369,234 @@ skeleton = NodePath("../..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 5, -10 )
 skeleton = NodePath("../../..")
 
-[node name="road_straight7" parent="LevelGeometry/underground_ground_A10" index="2" instance=ExtResource( 14 )]
+[node name="road_straight9" parent="LevelGeometry/underground_ground_A10" index="2" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.1, 1.90735e-06, 5, 34.5 )
+skeleton = NodePath("../../..")
+
+[node name="road_straight10" parent="LevelGeometry/underground_ground_A10" index="3" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 5, 45 )
+skeleton = NodePath("../../..")
+
+[node name="road_straight7" parent="LevelGeometry/underground_ground_A10" index="4" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.5, -10 )
 skeleton = NodePath("../../..")
 
-[node name="road_straight8" parent="LevelGeometry/underground_ground_A10" index="3" instance=ExtResource( 14 )]
+[node name="road_straight8" parent="LevelGeometry/underground_ground_A10" index="5" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.5, 0 )
 skeleton = NodePath("../../..")
 
-[node name="underground_wall16" parent="LevelGeometry/underground_ground_A10" index="4" instance=ExtResource( 8 )]
+[node name="underground_wall16" parent="LevelGeometry/underground_ground_A10" index="6" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 5, 1.90735e-06 )
 skeleton = NodePath("../../..")
 
-[node name="underground_wall17" parent="LevelGeometry/underground_ground_A10" index="5" instance=ExtResource( 8 )]
+[node name="underground_wall17" parent="LevelGeometry/underground_ground_A10" index="7" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -5.00001, 5, -1.14441e-05 )
 skeleton = NodePath("../../..")
 
-[node name="road_broken_A2" parent="LevelGeometry/underground_ground_A10" index="6" instance=ExtResource( 2 )]
+[node name="road_broken_A2" parent="LevelGeometry/underground_ground_A10" index="8" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.8147e-06, 5, -5.00001 )
 skeleton = NodePath("../../..")
 
-[node name="road_broken_B" parent="LevelGeometry/underground_ground_A10" index="7" instance=ExtResource( 11 )]
+[node name="road_broken_B" parent="LevelGeometry/underground_ground_A10" index="9" instance=ExtResource( 11 )]
 transform = Transform( -1, 1.4509e-08, -1.79452e-07, 0, 0.995373, 0.114728, 1.50996e-07, 0.096089, -1.18845, 0, 2.5, -0.5 )
 skeleton = NodePath("../../road_broken_A2")
 
-[node name="road_curve_90" parent="LevelGeometry" index="75" instance=ExtResource( 13 )]
+[node name="road_curve_90" parent="LevelGeometry" index="76" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 55 )
 
-[node name="road_hill" parent="LevelGeometry" index="76" instance=ExtResource( 12 )]
+[node name="road_curve_92" parent="LevelGeometry" index="77" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, -10 )
+
+[node name="road_hill" parent="LevelGeometry" index="78" instance=ExtResource( 12 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40, 0, 55 )
 skeleton = NodePath("../..")
 
-[node name="road_curve_91" parent="LevelGeometry" index="77" instance=ExtResource( 13 )]
+[node name="road_curve_91" parent="LevelGeometry" index="79" instance=ExtResource( 13 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 2.5, 55 )
+
+[node name="building_awning_A" parent="LevelGeometry" index="80" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.02119, 1.6466, -2.47653 )
+skeleton = NodePath("../..")
+
+[node name="building_awning_A2" parent="LevelGeometry" index="81" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.0212, 1.6466, -2.47117 )
+skeleton = NodePath("../..")
+
+[node name="building_awning_A3" parent="LevelGeometry" index="82" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.0212, 1.6466, 22.4158 )
+skeleton = NodePath("../..")
+
+[node name="building_awning_A4" parent="LevelGeometry" index="83" instance=ExtResource( 18 )]
+transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -55.0212, 4.1466, 42.4158 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_A" parent="LevelGeometry" index="84" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.5, 0, -40 )
+skeleton = NodePath("../..")
+
+[node name="building_awning_B" parent="LevelGeometry" index="85" instance=ExtResource( 17 )]
+transform = Transform( -1.07284e-07, 0, 1, 0, 1, 0, -1, 0, -1.07284e-07, 5.08493, 1.63714, 3.88559 )
+skeleton = NodePath("../building_awning_A")
+
+[node name="building_awning_B2" parent="LevelGeometry" index="86" instance=ExtResource( 17 )]
+transform = Transform( -1.07284e-07, 0, 1, 0, 1, 0, -1, 0, -1.07284e-07, 5.08493, 1.63714, 13.8856 )
+skeleton = NodePath("../building_awning_A")
+
+[node name="building_10x5_B" parent="LevelGeometry" index="87" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, -10 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B7" parent="LevelGeometry" index="88" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.5, 0, -40 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B5" parent="LevelGeometry" index="89" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.5, 0, 9.7553e-07 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B6" parent="LevelGeometry" index="90" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.5, 0, -10 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B3" parent="LevelGeometry" index="91" instance=ExtResource( 20 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -10, 0, 32.5 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B4" parent="LevelGeometry" index="92" instance=ExtResource( 20 )]
+transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 7.5, 0, 30 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_B2" parent="LevelGeometry" index="93" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7.5 )
+skeleton = NodePath("../..")
+
+[node name="roof_peaked_10x5m" parent="LevelGeometry/building_10x5_B2" index="1" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0 )
+
+[node name="building_5x5x75A" parent="LevelGeometry" index="94" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 5, -12.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5x75A2" parent="LevelGeometry" index="95" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 5, -2.5 )
+skeleton = NodePath("../..")
+
+[node name="drainpipe_10m" parent="LevelGeometry" index="96" instance=ExtResource( 23 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5.0823, 2.5, 15.2422 )
+skeleton = NodePath("../road_broken_A")
+
+[node name="drainpipe_10m2" parent="LevelGeometry" index="97" instance=ExtResource( 23 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -4.84974, 0, 27.7885 )
+skeleton = NodePath("../road_broken_A")
+
+[node name="drainpipe_10m3" parent="LevelGeometry" index="98" instance=ExtResource( 23 )]
+transform = Transform( -0.999812, 0.0194068, -1.50996e-07, 0.0194068, 0.999812, 0, 1.50967e-07, -2.93035e-09, -1, -34.689, -0.252182, 9.86813 )
+skeleton = NodePath("../road_broken_A")
+
+[node name="building_5x5_top_B" parent="LevelGeometry" index="99" instance=ExtResource( 24 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.5, 12.5, 12.5 )
+skeleton = NodePath("../drainpipe_10m")
+
+[node name="building_5x5x10_B" parent="LevelGeometry" index="100" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 30.5 )
+
+[node name="building_5x5x10_B2" parent="LevelGeometry" index="101" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5, 5, 32.5 )
+
+[node name="building_floor_5x5" parent="LevelGeometry" index="102" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="building_floor_5x9" parent="LevelGeometry" index="103" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -7.5 )
+skeleton = NodePath("../..")
+
+[node name="building_floor_5x10" parent="LevelGeometry" index="104" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -12.5 )
+skeleton = NodePath("../..")
+
+[node name="building_floor_5x6" parent="LevelGeometry" index="105" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="building_floor_5x7" parent="LevelGeometry" index="106" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="building_floor_5x8" parent="LevelGeometry" index="107" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5_roof_B" parent="LevelGeometry" index="108" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 10, 30.5 )
+skeleton = NodePath("../..")
+
+[node name="roof_peaked_5x5m" parent="LevelGeometry" index="109" instance=ExtResource( 27 )]
+transform = Transform( -3.97774e-08, 0, -0.91, 0, 0.91, 0, 0.91, 0, -3.97774e-08, -2.5, 10.5, 30.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5_roof_B2" parent="LevelGeometry" index="110" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 12.5, 32.5 )
+skeleton = NodePath("../..")
+
+[node name="roof_peaked_5x5m2" parent="LevelGeometry" index="111" instance=ExtResource( 27 )]
+transform = Transform( -3.97774e-08, 0, -0.91, 0, 0.91, 0, 0.91, 0, -3.97774e-08, -17.5, 13, 32.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5_roof_B3" parent="LevelGeometry" index="112" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 15, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="roof_peaked_5x5m3" parent="LevelGeometry" index="113" instance=ExtResource( 27 )]
+transform = Transform( -3.97774e-08, 0, -0.91, 0, 0.91, 0, 0.91, 0, -3.97774e-08, -47.5, 15.5, 27.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5_A" parent="LevelGeometry" index="114" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 32.5 )
+skeleton = NodePath("../..")
+
+[node name="building_5x5x10_A" parent="LevelGeometry" index="115" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 0, -17.5 )
+skeleton = NodePath("../..")
+
+[node name="building_10x5_A2" parent="LevelGeometry" index="116" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -17.5 )
+skeleton = NodePath("../..")
 
 [node name="TUT_Move" parent="." index="5" instance=ExtResource( 5 )]
 transform = Transform( 6.33781, 0, 0, 0, 3.59558, 0, 0, 0, 3.59558, 0.0445875, -1.43163, -17.4221 )
+char_name = "Professor Godot"
 messages = [ "Hello! It's a good day for walking a mech, isn't it!?", "Make the mech walk by pressing [color=#FFAA44]W[/color] and  [color=#FFAA44]S[/color] on the keyboard.", "Turn left with [color=#FFAA44]A[/color] and right with [color=#FFAA44]D[/color]", "Use the [color=#FFAA44]mouse[/color] to rotate the view, and zoom in and out with the wheel." ]
 
 [node name="TUT_Crouch" parent="." index="6" instance=ExtResource( 5 )]
 transform = Transform( -2.53512, 0, 0, 0, 3.59558, -1.00587e-06, 0, 3.14336e-07, 11.5059, -12.9103, -1.43163, 15.0779 )
+char_name = "Professor Godot"
 messages = [ "You'll need to make the mech crouch to get through here.", "You can adjust your height with [color=#FFAA44]F[/color] and [color=#FFAA44]V[/color]. Very useful, so don't forget!" ]
 
 [node name="TUT_Stand" parent="." index="7" instance=ExtResource( 5 )]
 transform = Transform( -0.102846, -1.39117e-08, 5.15362, -2.29319e-07, 3.59558, -3.29085e-08, 1.51523, 5.43222e-07, 0.349803, -29.7614, -1.43163, 19.4033 )
+char_name = "Professor Godot"
 messages = [ "Well done! Now you'll need to use the same controls to get up this rubble", "Press [color=#FFAA44]F[/color] to stand tall, and [color=#FFAA44]V[/color] to squat down. " ]
 
 [node name="TUT_RescuePod" parent="." index="8" instance=ExtResource( 5 )]
 transform = Transform( -0.122804, -1.15254e-08, 5.58602, -2.73821e-07, 2.97883, -3.56696e-08, 1.80927, 4.50043e-07, 0.379152, -30.0619, 2.23092, 44.8284 )
+char_name = "Professor Godot"
 messages = [ "There it is on your radar! The [color=#FFAA44]Rescue Pod![/color] This is what you are here for.", "[color=#FFAA44]Rescue Pods[/color] contain trapped survivors and need taking to an evac point." ]
 
 [node name="TUT_RescuePod2" parent="." index="9" instance=ExtResource( 5 )]
 transform = Transform( -3.27127, 4.94795e-07, 0.43169, 4.96779e-07, 2.97883, -6.06701e-07, 0.350694, 3.95763e-07, 4.0268, -43.8614, 4.9269, 55.971 )
+char_name = "Professor Godot"
 messages = [ "Position the mech's body over the Rescue Pod. A message will appear when you are close enough.", "Once the mech is in position, press [color=#FFAA44]E[/color] to pick it up." ]
 
 [node name="TUT_RescuePod3" parent="." index="10" instance=ExtResource( 5 )]
 transform = Transform( -0.00519569, 3.064e-07, 5.59885, -2.6914e-07, 2.97883, -5.78362e-07, 1.78242, 4.50685e-07, 0.0163204, -49.0808, 5.06419, 46.9817 )
+char_name = "Professor Godot"
 messages = [ "Excellent, the [color=#FFAA44]Evac Point[/color] is right there!", "Walk onto the [color=#FFAA44]Evac Point[/color] and press [color=#FFAA44]R[/color] to drop the Rescue Pod." ]
 required_item = "Rescue Pod"
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="11"]
 transform = Transform( -0.854323, -0.0424732, 0.518004, 0.506772, -0.289337, 0.812075, 0.115386, 0.956285, 0.268711, 0, 16.3704, 0 )
 light_color = Color( 0.792157, 0.890196, 0.890196, 1 )
-light_energy = 0.6
 light_bake_mode = 0
 shadow_enabled = true
 shadow_color = Color( 0.101961, 0.101961, 0.121569, 1 )
@@ -404,3 +607,18 @@ required_rescues = 1
 
 [node name="RescuePod" parent="." index="13" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.603, 3.24131, 57.5326 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="14"]
+environment = SubResource( 44 )
+
+[node name="underground_wall_corner_inner" parent="." index="15" instance=ExtResource( 32 )]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 0, 5 )
+
+[node name="underground_wall_corner_outer" parent="." index="16" instance=ExtResource( 31 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 5, 0, 25 )
+
+[node name="underground_wall_corner_outer2" parent="." index="17" instance=ExtResource( 31 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -15, 0, 25 )
+
+[node name="underground_wall_corner_outer3" parent="." index="18" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, -15, 0, 5 )

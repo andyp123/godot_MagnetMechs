@@ -59,7 +59,7 @@ __meta__ = {
 type_name = "Car"
 weight_units = 2
 
-[node name="Car_A" type="MeshInstance" parent="."]
+[node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
 

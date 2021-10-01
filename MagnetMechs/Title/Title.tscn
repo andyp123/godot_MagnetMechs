@@ -217,11 +217,11 @@ surfaces/0 = {
 "vertex_count": 663
 }
 
-[sub_resource type="ProceduralSky" id=43]
+[sub_resource type="ProceduralSky" id=45]
 
 [sub_resource type="Environment" id=44]
 background_mode = 2
-background_sky = SubResource( 43 )
+background_sky = SubResource( 45 )
 background_energy = 0.5
 fog_enabled = true
 fog_color = Color( 0.231373, 0.164706, 0.133333, 1 )

@@ -22,7 +22,7 @@ margin_bottom = 123.0
 [node name="DialogueUI" parent="." instance=ExtResource( 1 )]
 visible = false
 margin_left = 13.3183
-margin_top = 575.585
+margin_top = 589.585
 margin_right = 13.3183
-margin_bottom = 575.585
+margin_bottom = 589.585
 rect_pivot_offset = Vector2( 361.256, 213.557 )
