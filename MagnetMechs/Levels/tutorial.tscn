@@ -566,7 +566,7 @@ skeleton = NodePath("../..")
 [node name="TUT_Move" parent="." index="5" instance=ExtResource( 5 )]
 transform = Transform( 6.33781, 0, 0, 0, 3.59558, 0, 0, 0, 3.59558, 0.0445875, -1.43163, -17.4221 )
 char_name = "Professor Godot"
-messages = [ "Hello! It's a good day for walking a mech, isn't it!?", "Make the mech walk by pressing [color=#FFAA44]W[/color] and  [color=#FFAA44]S[/color] on the keyboard.", "Turn left with [color=#FFAA44]A[/color] and right with [color=#FFAA44]D[/color]", "Use the [color=#FFAA44]mouse[/color] to rotate the view, and zoom in and out with the wheel." ]
+messages = [ "Nice day for walking a  [color=#FFAA44]Mech[/color], isn't it!", "Make the mech walk by pressing [color=#FFAA44]W[/color] and  [color=#FFAA44]S[/color] on the keyboard.", "Turn left with [color=#FFAA44]A[/color] and right with [color=#FFAA44]D[/color]", "Use the [color=#FFAA44]mouse[/color] to rotate the view, and zoom in and out with the wheel." ]
 
 [node name="TUT_Crouch" parent="." index="6" instance=ExtResource( 5 )]
 transform = Transform( -2.53512, 0, 0, 0, 3.59558, -1.00587e-06, 0, 3.14336e-07, 11.5059, -12.9103, -1.43163, 15.0779 )

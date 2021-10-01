@@ -18,6 +18,8 @@ var required_rescues = 0
 var current_rescues = 0
 
 export var mission_clear_message = "Well done! I knew you could figure it out."
+export var mission_one_left_message = "One more to go!"
+export var mission_rescue_messages = ["Nice job!", "That's one more.", "Great!"]
 
 
 func restart_level() -> void:
@@ -56,6 +58,11 @@ func _on_rescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 	current_rescues += 1
 	if current_rescues >= required_rescues:
 		complete_level()
+	elif current_rescues == required_rescues - 1:
+		player.hud.set_dialogue([mission_one_left_message])
+	else:
+		var i = randi() % mission_rescue_messages.size()
+		player.hud.set_dialogue([mission_rescue_messages[i]])
 
 
 func complete_level() -> void:
@@ -71,6 +78,8 @@ func _on_unrescue(rescue_zone: RescueZone, cargo: Cargo) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE and event.pressed and !event.echo:
+			if level_clear_ui.visible:
+				return
 			if pause_menu.visible:
 				pause_menu.hide()
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
