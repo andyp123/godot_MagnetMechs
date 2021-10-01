@@ -11,6 +11,7 @@ data_*/
 # Project Specific ignores
 AssetSource/**
 Builds/**
+Videos/**
 
 # Blender backup ignores
 *.blend1
