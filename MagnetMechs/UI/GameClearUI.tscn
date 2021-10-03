@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Font_Large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/LevelClearUI.gd" type="Script" id=3]
 [ext_resource path="res://UI/9-patch_outline.png" type="Texture" id=4]
+[ext_resource path="res://UI/mech_render.png" type="Texture" id=5]
 
 [node name="LevelClearUI" type="Control"]
 pause_mode = 2
@@ -17,10 +18,10 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = 286.937
-margin_top = 285.775
-margin_right = 736.937
-margin_bottom = 485.775
+margin_left = 36.0
+margin_top = 174.0
+margin_right = 989.0
+margin_bottom = 556.0
 texture = ExtResource( 4 )
 patch_margin_left = 32
 patch_margin_top = 32
@@ -31,31 +32,53 @@ __meta__ = {
 }
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
-margin_left = 334.0
-margin_top = 323.0
-margin_right = 689.0
-margin_bottom = 444.0
+margin_left = 83.5159
+margin_top = 200.0
+margin_right = 672.516
+margin_bottom = 518.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="MenuItems"]
-margin_right = 355.0
+margin_right = 589.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 theme = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "Mission Clear!"
+text = "Game Clear!"
 align = 1
 
-[node name="NextButton" type="Button" parent="MenuItems"]
+[node name="Label2" type="Label" parent="MenuItems"]
 margin_top = 64.0
-margin_right = 355.0
-margin_bottom = 121.0
+margin_right = 589.0
+margin_bottom = 257.0
+rect_min_size = Vector2( 0, 60 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
+text = "That's it, you cleared Magnet Mechs!
+This short game was created over two weeks by a single person for Mech Jam II on itch.io with the wonderful Godot Game Engine.
+
+Thanks for playing!
+"
+align = 1
+autowrap = true
+
+[node name="NextButton" type="Button" parent="MenuItems"]
+margin_left = 104.0
+margin_top = 261.0
+margin_right = 485.0
+margin_bottom = 318.0
+size_flags_horizontal = 4
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "Next Mission"
+text = "Return to Title"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 839.614, 363.521 )
+scale = Vector2( 0.638481, 0.638481 )
+texture = ExtResource( 5 )
 
 [connection signal="tree_exiting" from="." to="." method="_on_PauseMenu_tree_exiting"]
 [connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]

@@ -114,7 +114,7 @@ bones/5/name = "foot_r"
 bones/5/parent = 4
 bones/5/rest = Transform( -1, 1.4673e-07, 3.56381e-08, -5.68434e-14, 0.23602, -0.971748, -1.50996e-07, -0.971748, -0.23602, 6.09933e-08, 3.27798, 2.59376e-08 )
 bones/5/enabled = true
-bones/5/bound_children = [  ]
+bones/5/bound_children = [ NodePath("BoneAttachment_Right") ]
 bones/6/name = "hip_l"
 bones/6/parent = 1
 bones/6/rest = Transform( 1.19209e-07, -1, -2.15136e-07, 0.999904, 1.19209e-07, 0.0138364, -0.0138364, -2.16998e-07, 0.999904, -1.29943e-16, 1.08521, 4.65661e-09 )
@@ -134,7 +134,7 @@ bones/9/name = "foot_l"
 bones/9/parent = 8
 bones/9/rest = Transform( -1, -6.10096e-07, -1.48181e-07, -2.55795e-13, 0.23602, -0.971748, 6.27833e-07, -0.971748, -0.23602, -2.34777e-07, 3.27798, 5.74026e-08 )
 bones/9/enabled = true
-bones/9/bound_children = [  ]
+bones/9/bound_children = [ NodePath("BoneAttachment_Left") ]
 script = ExtResource( 2 )
 
 [node name="IK_Left" type="SkeletonIK" parent="Armature/Skeleton"]
@@ -142,14 +142,14 @@ process_priority = 1
 root_bone = "upper_leg_l"
 tip_bone = "foot_l"
 use_magnet = true
-magnet = Vector3( -1.2, 3, 3 )
+magnet = Vector3( -1.2, 3, 4 )
 
 [node name="IK_Right" type="SkeletonIK" parent="Armature/Skeleton"]
 process_priority = 1
 root_bone = "upper_leg_r"
 tip_bone = "foot_r"
 use_magnet = true
-magnet = Vector3( 1.2, 3, 3 )
+magnet = Vector3( 1.2, 3, 4 )
 
 [node name="Mech" type="MeshInstance" parent="Armature/Skeleton"]
 mesh = SubResource( 7 )
