@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Environment/road_straight.scn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerMech.tscn" type="PackedScene" id=2]
@@ -40,6 +40,11 @@
 [ext_resource path="res://Environment/building_5x5_B.scn" type="PackedScene" id=38]
 [ext_resource path="res://Cargo/CarB.tscn" type="PackedScene" id=39]
 [ext_resource path="res://Cargo/CarA.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Environment/drainpipe_10m.scn" type="PackedScene" id=41]
+[ext_resource path="res://Environment/building_awning_B.scn" type="PackedScene" id=42]
+[ext_resource path="res://Environment/building_awning_A.scn" type="PackedScene" id=43]
+[ext_resource path="res://Environment/drainpipe_75m.scn" type="PackedScene" id=44]
+[ext_resource path="res://Environment/drainpipe_5m.scn" type="PackedScene" id=45]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "BuildingParts_Cube006"
@@ -82,44 +87,37 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.62666
 [node name="RescuePod" parent="." index="1" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 1.5, 0.5, 30.5 )
 
-[node name="RescuePod3" parent="." index="2" instance=ExtResource( 4 )]
-transform = Transform( 0.494911, 0.0545071, -0.867232, -0.158987, 0.986863, -0.0287045, 0.854275, 0.152085, 0.497075, 0.337727, -2.42857, -16.3411 )
-sleeping = true
-
-[node name="RescuePod9" parent="." index="3" instance=ExtResource( 4 )]
+[node name="RescuePod9" parent="." index="2" instance=ExtResource( 4 )]
 transform = Transform( 0.0570346, -0.209962, -0.976045, -0.102968, 0.971185, -0.214934, 0.993048, 0.11276, 0.0337718, 27.7481, -4.41142, 18.9751 )
 sleeping = true
 
-[node name="RescuePod5" parent="." index="4" instance=ExtResource( 4 )]
+[node name="RescuePod5" parent="." index="3" instance=ExtResource( 4 )]
 transform = Transform( 0.503414, 0.024469, -0.863699, -0.0356184, 0.999337, 0.00755118, 0.863311, 0.0269622, 0.503951, -31.7402, -3.50205, 8.99446 )
 sleeping = true
 
-[node name="RescuePod6" parent="." index="5" instance=ExtResource( 4 )]
+[node name="RescuePod6" parent="." index="4" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -10.2141, 6, -2.20096 )
 
-[node name="RescuePod7" parent="." index="6" instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -33.4103, 8.11951, 25.976 )
-
-[node name="RescuePod8" parent="." index="7" instance=ExtResource( 4 )]
+[node name="RescuePod8" parent="." index="5" instance=ExtResource( 4 )]
 transform = Transform( 0.497874, 0.0460636, 0.866025, -0.0921273, 0.995747, -3.70945e-09, -0.862342, -0.0797846, 0.5, -18.9674, 6.91993, 16.4863 )
 sleeping = true
 
-[node name="RescuePod4" parent="." index="8" instance=ExtResource( 4 )]
-transform = Transform( 0.497723, 0.0476623, -0.866025, -0.0953245, 0.995446, -5.82075e-11, 0.862082, 0.0825535, 0.5, -0.181931, 2.05721, -43.4132 )
+[node name="RescuePod4" parent="." index="6" instance=ExtResource( 4 )]
+transform = Transform( 0.929029, -0.161993, -0.33266, 0.169394, 0.985524, -0.0068438, 0.328953, -0.0499924, 0.943021, -2.02007, 1.92935, -43.5183 )
 sleeping = true
 
-[node name="RescuePod2" parent="." index="9" instance=ExtResource( 4 )]
+[node name="RescuePod2" parent="." index="7" instance=ExtResource( 4 )]
 transform = Transform( 0.482963, 0.129409, -0.866025, -0.258819, 0.965926, 0, 0.836516, 0.224144, 0.5, 12.2132, 6.75882, 37.0558 )
 
-[node name="FollowCamera" parent="." index="10" instance=ExtResource( 3 )]
+[node name="FollowCamera" parent="." index="8" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 
-[node name="Camera" type="Camera" parent="." index="11"]
+[node name="Camera" type="Camera" parent="." index="9"]
 transform = Transform( -0.986915, 0, -0.161242, 0, 1, 0, 0.161242, 0, -0.986915, 0, 4.80516, -22.3266 )
 
-[node name="RescueZone" parent="." index="12" instance=ExtResource( 7 )]
-transform = Transform( 2.97323, 0, 0.0162943, 0, 1.2, 0, -0.0162943, 0, 2.97323, 0, -5, 15 )
-required_rescues = 9
+[node name="RescueZone" parent="." index="10" instance=ExtResource( 7 )]
+transform = Transform( 2.58401, 0, 0.0141612, 0, 1.2, 0, -0.0141612, 0, 2.58401, 0, -5, 15 )
+required_rescues = 7
 
 [node name="Buildings" type="Spatial" parent="LevelGeometry" index="0"]
 
@@ -676,7 +674,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 5, 37.5 )
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 33.5311, -5, 23.1519 )
 
 [node name="building_5x5_B" parent="LevelGeometry/Buildings" index="140" instance=ExtResource( 38 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 2.5, 27.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 5, 37.5 )
 
 [node name="building_5x5_B2" parent="LevelGeometry/Buildings" index="141" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 7.5, -47.5 )
@@ -853,45 +851,48 @@ transform = Transform( 1.5, 0, 2.62268e-07, 0, 1.05, 0, -2.62268e-07, 0, 1.5, -2
 transform = Transform( -1.26, 0, -1.58546e-07, 0, 1.2, 0, 1.90255e-07, 0, -1.05, 15, 5, 39 )
 
 [node name="rubble_B" parent="LevelGeometry/Misc" index="14" instance=ExtResource( 20 )]
-transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -30 )
+transform = Transform( 1.8, 0, 0, 0, 1.4, 0, 0, 0, 1, 1.5, 0, -33 )
 
-[node name="rubble_B3" parent="LevelGeometry/Misc" index="15" instance=ExtResource( 20 )]
+[node name="rubble_B14" parent="LevelGeometry/Misc" index="15" instance=ExtResource( 20 )]
+transform = Transform( -2.62268e-08, 0, 1, 0, 1.26, 0, -0.6, 0, -4.37114e-08, -0.5, 0, -26.5 )
+
+[node name="rubble_B3" parent="LevelGeometry/Misc" index="16" instance=ExtResource( 20 )]
 transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.5, 0, -43 )
 
-[node name="rubble_B4" parent="LevelGeometry/Misc" index="16" instance=ExtResource( 20 )]
+[node name="rubble_B4" parent="LevelGeometry/Misc" index="17" instance=ExtResource( 20 )]
 transform = Transform( -1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, 5.5, 0, -38 )
 
-[node name="rubble_B2" parent="LevelGeometry/Misc" index="17" instance=ExtResource( 20 )]
+[node name="rubble_B2" parent="LevelGeometry/Misc" index="18" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -5, 15.5 )
 
-[node name="rubble_B5" parent="LevelGeometry/Misc" index="18" instance=ExtResource( 20 )]
+[node name="rubble_B5" parent="LevelGeometry/Misc" index="19" instance=ExtResource( 20 )]
 transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 33.2759, -5, 52.5953 )
 
-[node name="rubble_B9" parent="LevelGeometry/Misc" index="19" instance=ExtResource( 20 )]
+[node name="rubble_B9" parent="LevelGeometry/Misc" index="20" instance=ExtResource( 20 )]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -16.6223, 5, -8.05674 )
 
-[node name="rubble_B13" parent="LevelGeometry/Misc" index="20" instance=ExtResource( 20 )]
+[node name="rubble_B13" parent="LevelGeometry/Misc" index="21" instance=ExtResource( 20 )]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -14.462, 5, -24.3151 )
 
-[node name="rubble_B8" parent="LevelGeometry/Misc" index="21" instance=ExtResource( 20 )]
+[node name="rubble_B8" parent="LevelGeometry/Misc" index="22" instance=ExtResource( 20 )]
 transform = Transform( 0.777818, 0, -0.707107, 0, 1, 0, 0.777817, 0, 0.707107, 10.0658, 5, 36.4867 )
 
-[node name="rubble_B11" parent="LevelGeometry/Misc" index="22" instance=ExtResource( 20 )]
+[node name="rubble_B11" parent="LevelGeometry/Misc" index="23" instance=ExtResource( 20 )]
 transform = Transform( -0.250063, 0, -1.3633, 0, 1, 0, 1.73211, 0, -0.196819, -22.9474, 5, 38.1262 )
 
-[node name="rubble_B12" parent="LevelGeometry/Misc" index="23" instance=ExtResource( 20 )]
+[node name="rubble_B12" parent="LevelGeometry/Misc" index="24" instance=ExtResource( 20 )]
 transform = Transform( 0.56393, 0, 0.719927, 0, 1, 0, -0.914687, 0, 0.443855, -19.4928, 5.03033, 15.8296 )
 
-[node name="rubble_B6" parent="LevelGeometry/Misc" index="24" instance=ExtResource( 20 )]
+[node name="rubble_B6" parent="LevelGeometry/Misc" index="25" instance=ExtResource( 20 )]
 transform = Transform( 0.410978, 0, -0.965926, 0, 1, 0, 1.53379, 0, 0.258819, 31.3289, -5, 15.7988 )
 
-[node name="rubble_B10" parent="LevelGeometry/Misc" index="25" instance=ExtResource( 20 )]
+[node name="rubble_B10" parent="LevelGeometry/Misc" index="26" instance=ExtResource( 20 )]
 transform = Transform( -1.71429, 0, -0.00506615, 0, 0.766333, 0, 0.00538597, 0, -1.6125, -33.2627, -5, 10.1823 )
 
-[node name="rubble_B7" parent="LevelGeometry/Misc" index="26" instance=ExtResource( 20 )]
+[node name="rubble_B7" parent="LevelGeometry/Misc" index="27" instance=ExtResource( 20 )]
 transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 25.9689, -5, 32.3456 )
 
-[node name="large_bridge" parent="LevelGeometry/Misc" index="27" instance=ExtResource( 10 )]
+[node name="large_bridge" parent="LevelGeometry/Misc" index="28" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 0, 10 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
@@ -933,46 +934,46 @@ skeleton = NodePath("../../../..")
 transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 9.53674e-07, 5, -10 )
 skeleton = NodePath("../../../..")
 
-[node name="tunnel_low2" parent="LevelGeometry/Misc" index="28" instance=ExtResource( 10 )]
+[node name="tunnel_low2" parent="LevelGeometry/Misc" index="29" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.90735e-06, 0, 40 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_low3" parent="LevelGeometry/Misc" index="29" instance=ExtResource( 10 )]
+[node name="tunnel_low3" parent="LevelGeometry/Misc" index="30" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 40 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_low4" parent="LevelGeometry/Misc" index="30" instance=ExtResource( 10 )]
+[node name="tunnel_low4" parent="LevelGeometry/Misc" index="31" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, 40 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_low" parent="LevelGeometry/Misc" index="31" instance=ExtResource( 10 )]
+[node name="tunnel_low" parent="LevelGeometry/Misc" index="32" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.90735e-06, 0, -30 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_low5" parent="LevelGeometry/Misc" index="32" instance=ExtResource( 10 )]
+[node name="tunnel_low5" parent="LevelGeometry/Misc" index="33" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, -30 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_support" parent="LevelGeometry/Misc" index="33" instance=ExtResource( 16 )]
+[node name="tunnel_support" parent="LevelGeometry/Misc" index="34" instance=ExtResource( 16 )]
 transform = Transform( 1.2, 0, 0, 0, 1.82, 0, 0, 0, 1, -11, 3.5, 44 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_support4" parent="LevelGeometry/Misc" index="34" instance=ExtResource( 16 )]
+[node name="tunnel_support4" parent="LevelGeometry/Misc" index="35" instance=ExtResource( 16 )]
 transform = Transform( 1.2, 0, 0, 0, 1.82, 0, 0, 0, 1, -11, 3.5, -34 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_support2" parent="LevelGeometry/Misc" index="35" instance=ExtResource( 16 )]
+[node name="tunnel_support2" parent="LevelGeometry/Misc" index="36" instance=ExtResource( 16 )]
 transform = Transform( 0.84, 0, 0, 0, 1.82, 0, 0, 0, 1, 10, 3.5, 44 )
 skeleton = NodePath("../../..")
 
-[node name="tunnel_support3" parent="LevelGeometry/Misc" index="36" instance=ExtResource( 16 )]
+[node name="tunnel_support3" parent="LevelGeometry/Misc" index="37" instance=ExtResource( 16 )]
 transform = Transform( 0.84, 0, 0, 0, 1.82, 0, 0, 0, 1, 10, -1, 44 )
 skeleton = NodePath("../../..")
 
-[node name="road_straight17" parent="LevelGeometry/Misc" index="37" instance=ExtResource( 1 )]
+[node name="road_straight17" parent="LevelGeometry/Misc" index="38" instance=ExtResource( 1 )]
 transform = Transform( 0.00444679, -0.0305151, -0.999526, -0.0756945, 0.997053, -0.03073, 1.07411, 0.0703904, 0.00197241, -47.5, 0, -10 )
 skeleton = NodePath("../../..")
 
@@ -987,6 +988,38 @@ skeleton = NodePath("../../../..")
 [node name="underground_wall34" parent="LevelGeometry/Misc/road_straight17" index="3" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 5, 0.135393, 0 )
 skeleton = NodePath("../../../..")
+
+[node name="building_awning_A" parent="LevelGeometry/Misc" index="39" instance=ExtResource( 43 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 1.72361, -7.45517 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_A4" parent="LevelGeometry/Misc" index="40" instance=ExtResource( 43 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4758, 1.72361, 55.1098 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_A5" parent="LevelGeometry/Misc" index="41" instance=ExtResource( 43 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4155, 1.72361, 55.1098 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_A2" parent="LevelGeometry/Misc" index="42" instance=ExtResource( 43 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 1.72361, -17.4552 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_A3" parent="LevelGeometry/Misc" index="43" instance=ExtResource( 43 )]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 12.5, 1.72361, 4.86438 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_B" parent="LevelGeometry/Misc" index="44" instance=ExtResource( 42 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.2083, 6.63657, 46.0994 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_B2" parent="LevelGeometry/Misc" index="45" instance=ExtResource( 42 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25.2083, 6.63657, -23.9343 )
+skeleton = NodePath("../../..")
+
+[node name="building_awning_B3" parent="LevelGeometry/Misc" index="46" instance=ExtResource( 42 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.15086, 1.66797, -16.1141 )
+skeleton = NodePath("../../..")
 
 [node name="Underground" type="Spatial" parent="LevelGeometry" index="3"]
 
@@ -1272,16 +1305,26 @@ transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 25, 0, 20
 transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, -50, 5, -15 )
 skeleton = NodePath("../../..")
 
-[node name="LevelControl_NoPause" parent="." index="14"]
+[node name="LevelControl_NoPause" parent="." index="12"]
 next_scene = "res://Title/Title.tscn"
 level_clear_ui_template = ExtResource( 36 )
 mission_clear_message = "That's everybody safe! [color=#FFAA33]Thanks for your help, and thanks for playing![/color]"
 mission_one_left_message = "Only one more remaining!"
 
-[node name="TUT_LevelStart" parent="." index="15" instance=ExtResource( 15 )]
+[node name="TUT_LevelStart" parent="." index="13" instance=ExtResource( 15 )]
 transform = Transform( 6.33781, 0, 0, 0, 2.52297, 0, 0, 0, 1.35357, 0.424101, -2.16607, 1.9911 )
 char_name = "Professor Godot"
-messages = [ "This area is a bit larger than the others.", "It's going to take a while to find all of the [color=#FFAA33]Rescue Pods[/color].", "Oh my! I'm picking up [color=#FFAA33]NINE[/color] signals!" ]
+messages = [ "This area is a bit larger than the others.", "It's going to take a while to find all of the [color=#FFAA33]Rescue Pods[/color].", "Oh my! I'm picking up [color=#FFAA33]SEVEN[/color] signals!", "I probably should mentioned that you can carry up to three at a time!" ]
+
+[node name="TUT_Bridge" parent="." index="14" instance=ExtResource( 15 )]
+transform = Transform( 7.06298, 0, 0, 0, 3.32401, 0, 0, 0, 8.8105, -19.4932, 8.0521, 15.3422 )
+char_name = "Professor Godot"
+messages = [ "You can probably drop that one off the bridge.", "If you rotate and jostle the mech towards the edge, you should be able to get close enough to drop it off.", "Don't worry about the survivor - the pods have really good cushions." ]
+
+[node name="TUT_Slopes" parent="." index="15" instance=ExtResource( 15 )]
+transform = Transform( 5.48059, 0, 0, 0, 3.32401, 0, 0, 0, 6.28015, -14.8187, 7.40631, -40.7636 )
+char_name = "Professor Godot"
+messages = [ "You'll need to crouch to go down slopes like this.", "After the emergency I only had a limited amount of time to customise the mech for rescue!", "Having said that, it was originally built for going up and down stairs, so perhaps it should be better at slopes." ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="16"]
 transform = Transform( -0.855582, -0.0375546, 0.516304, 0.50394, -0.288585, 0.814103, 0.118424, 0.956718, 0.265833, -0.00950623, 16.3316, -10.1875 )
@@ -1311,3 +1354,24 @@ transform = Transform( 0.0463693, -0.0823721, 0.995522, -0.103209, 0.990866, 0.0
 
 [node name="CarB2" parent="." index="23" instance=ExtResource( 39 )]
 transform = Transform( -0.990347, 0.138612, 0.000639587, 0.138613, 0.990342, 0.00296457, -0.000222485, 0.00302461, -0.999995, -23.089, 6.41134, -21.6961 )
+
+[node name="drainpipe_5m" parent="." index="24" instance=ExtResource( 45 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76448, 7.41354, 4.77463 )
+
+[node name="drainpipe_5m2" parent="." index="25" instance=ExtResource( 45 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8761, 15.1354, 30.5766 )
+
+[node name="drainpipe_10m" parent="." index="26" instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1679, 5.18987, 3.2781 )
+
+[node name="drainpipe_10m2" parent="." index="27" instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8768, 5.18987, 30.553 )
+
+[node name="drainpipe_75m" parent="." index="28" instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43487, 7.41354, -14.7569 )
+
+[node name="drainpipe_75m2" parent="." index="29" instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6421, 5.09889, -4.81608 )
+
+[node name="drainpipe_75m3" parent="." index="30" instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3424, -0.059401, 14.6234 )

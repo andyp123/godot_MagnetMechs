@@ -34,7 +34,9 @@ func _process(delta: float) -> void:
 		var dist = offset.length()
 		
 		var marker: Sprite = markers[i]
-		marker.frame = 3 if dist < tracking_radius else 2
+		marker.frame = 2 if pod.in_rescue_zone else 0
+		if dist < tracking_radius:
+			marker.frame += 1
 			
 		dist = clamp(dist, 0, tracking_radius)
 		# Calculate marker offset and rotate to get position
@@ -42,4 +44,3 @@ func _process(delta: float) -> void:
 		var angle = Vector2(offset.x, offset.z).normalized().angle_to(Vector2(t.basis.z.x, t.basis.z.z).normalized())
 		mp = mp.rotated(angle)
 		marker.position = Vector2(-mp.x, mp.y) # not sure why x is negative, but whatever!
-		

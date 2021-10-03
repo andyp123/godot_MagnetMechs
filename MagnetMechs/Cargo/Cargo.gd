@@ -16,6 +16,9 @@ var spring_target_offset: Vector3 = Vector3.ZERO
 var spring_target
 onready var inv_mass: float = 1.0 / weight_units
 
+# HACKY: set by RescueZone, checked by radar :)
+var in_rescue_zone = false
+
 signal uncoupled
 
 var velocity: Vector3 = Vector3.ZERO

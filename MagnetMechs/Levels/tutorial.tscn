@@ -576,7 +576,7 @@ messages = [ "You'll need to make the mech crouch to get through here.", "You ca
 [node name="TUT_Stand" parent="." index="7" instance=ExtResource( 5 )]
 transform = Transform( -0.102846, -1.39117e-08, 5.15362, -2.29319e-07, 3.59558, -3.29085e-08, 1.51523, 5.43222e-07, 0.349803, -29.7614, -1.43163, 19.4033 )
 char_name = "Professor Godot"
-messages = [ "Well done! Now you'll need to use the same controls to get up this rubble", "Press [color=#FFAA44]F[/color] to stand tall, and [color=#FFAA44]V[/color] to squat down. " ]
+messages = [ "Well done! Now you'll need to use the same controls to get up this rubble", "Press [color=#FFAA44]F[/color] to stand tall, and [color=#FFAA44]V[/color] to squat down. ", "If the mech seems stuck, try rotating or adjusting height." ]
 
 [node name="TUT_RescuePod" parent="." index="8" instance=ExtResource( 5 )]
 transform = Transform( -0.122804, -1.15254e-08, 5.58602, -2.73821e-07, 2.97883, -3.56696e-08, 1.80927, 4.50043e-07, 0.379152, -30.0619, 2.23092, 44.8284 )
@@ -584,7 +584,7 @@ char_name = "Professor Godot"
 messages = [ "There it is on your radar! The [color=#FFAA44]Rescue Pod![/color] This is what you are here for.", "[color=#FFAA44]Rescue Pods[/color] contain trapped survivors and need taking to an evac point." ]
 
 [node name="TUT_RescuePod2" parent="." index="9" instance=ExtResource( 5 )]
-transform = Transform( -3.27127, 4.94795e-07, 0.43169, 4.96779e-07, 2.97883, -6.06701e-07, 0.350694, 3.95763e-07, 4.0268, -43.8614, 4.9269, 55.971 )
+transform = Transform( -3.27127, 4.94795e-07, 0.43169, 4.96779e-07, 2.97883, -6.06701e-07, 0.350694, 3.95763e-07, 4.0268, -46.2939, 4.9269, 56.7346 )
 char_name = "Professor Godot"
 messages = [ "Position the mech's body over the Rescue Pod. A message will appear when you are close enough.", "Once the mech is in position, press [color=#FFAA44]E[/color] to pick it up." ]
 
@@ -602,7 +602,7 @@ shadow_enabled = true
 shadow_color = Color( 0.101961, 0.101961, 0.121569, 1 )
 
 [node name="RescueZone" parent="." index="12" instance=ExtResource( 15 )]
-transform = Transform( -0.765416, 0, 0.00706721, 0, 1, 0, -0.00706721, 0, -0.765416, -50.0021, 2.48541, 42.2718 )
+transform = Transform( -0.765416, 0, 0.00706721, 0, 1, 0, -0.00706721, 0, -0.765416, -49.9836, 2.48541, 40.2719 )
 required_rescues = 1
 
 [node name="RescuePod" parent="." index="13" instance=ExtResource( 16 )]

@@ -73,9 +73,10 @@ sky_horizon_color = Color( 0.952941, 0.870588, 0.768627, 1 )
 background_mode = 2
 background_sky = SubResource( 43 )
 fog_enabled = true
-fog_color = Color( 0.615686, 0.588235, 0.501961, 1 )
-fog_sun_color = Color( 0.992157, 0.752941, 0.498039, 1 )
-fog_depth_begin = 25.0
+fog_color = Color( 0.713726, 0.662745, 0.486275, 1 )
+fog_sun_color = Color( 0.99, 0.71247, 0.4158, 1 )
+fog_depth_begin = 15.0
+fog_depth_end = 80.0
 fog_height_max = -40.0
 fog_height_curve = 0.615572
 adjustment_brightness = 1.12
@@ -530,7 +531,7 @@ messages = [ "There are [color=#FFAA33]three Rescue Pods[/color] in this area." 
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="16"]
 transform = Transform( -0.855582, -0.0375542, 0.516304, 0.50394, -0.288585, 0.814103, 0.118424, 0.956718, 0.265833, -0.00950623, 16.3316, -0.187502 )
-light_color = Color( 0.890196, 0.882353, 0.792157, 1 )
+light_color = Color( 0.921569, 0.835294, 0.611765, 1 )
 light_energy = 0.7
 light_bake_mode = 0
 shadow_enabled = true

@@ -48,20 +48,23 @@ func _ready() -> void:
 		current_foot = ik_left
 		foot_end_transform = ik_left.target
 	else:
-		print("Error: Incorrect feet setup")
+		print("Error: Incorrect IK setup")
 
 
 func manual_update(delta: float, foot_z_offset: float = 0) -> void:
 	if current_foot == null:
 		return
 	if foot_lerp_time < step_duration:
-		var body_y = (global_transform * (get_bone_global_pose(hip_l_id).origin)).y
+		# body not ideal height, so using shoulder/hip
+		var bone_id = hip_l_id if current_foot == ik_left else hip_r_id
+		var body_y = (global_transform * (get_bone_global_pose(bone_id).origin)).y
 		var diff_y = body_y - foot_start_transform.origin.y
 		var step_y = min(step_height, diff_y * 0.5)
 		var alpha = foot_lerp_time / step_duration
 		var t = foot_start_transform.interpolate_with(foot_end_transform, alpha)
 		t.origin.y += sin(alpha * PI) * step_y
 		current_foot.target = t
+		
 		foot_lerp_time += delta
 	else:
 		current_foot.target = foot_end_transform

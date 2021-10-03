@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _cargo_hover(cargo: Cargo, hovered: bool) -> void:
 	if cargo.type_name == required_type:
+		cargo.in_rescue_zone = hovered
 		if hovered:
 			current_rescues += 1
 			emit_signal("cargo_entered", self, cargo)
