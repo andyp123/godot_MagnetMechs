@@ -2,7 +2,7 @@ extends Control
 
 var current_level # should be type Level
 
-onready var menu_items = $MenuBackground/MenuItems
+onready var menu_items = $MenuBackground
 onready var help_panel = $HelpPanel
 
 func _ready() -> void:
