@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/TitleUITheme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Font_Large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/PauseMenu.gd" type="Script" id=3]
 [ext_resource path="res://UI/cheat-sheet.png" type="Texture" id=4]
+[ext_resource path="res://UI/9-patch_shadow.png" type="Texture" id=5]
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -16,83 +17,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MenuItems" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 335.0
-margin_top = 218.0
-margin_right = 689.0
-margin_bottom = 549.0
-
-[node name="Label" type="Label" parent="CenterContainer/MenuItems"]
-margin_right = 354.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 0, 60 )
-theme = ExtResource( 1 )
-custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Paused"
-align = 1
-
-[node name="ResumeButton" type="Button" parent="CenterContainer/MenuItems"]
-margin_top = 64.0
-margin_right = 354.0
-margin_bottom = 121.0
-theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Resume"
-
-[node name="RestartButton" type="Button" parent="CenterContainer/MenuItems"]
-margin_top = 125.0
-margin_right = 354.0
-margin_bottom = 182.0
-theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Retry Mission"
-
-[node name="HelpButton" type="Button" parent="CenterContainer/MenuItems"]
-margin_top = 186.0
-margin_right = 354.0
-margin_bottom = 243.0
-theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Controls"
-
-[node name="SpacerLabel" type="Label" parent="CenterContainer/MenuItems"]
-margin_top = 247.0
-margin_right = 354.0
-margin_bottom = 261.0
-
-[node name="ReturnToTitleButton" type="Button" parent="CenterContainer/MenuItems"]
-margin_top = 265.0
-margin_right = 354.0
-margin_bottom = 296.0
-theme = ExtResource( 1 )
-text = "Quit to Title"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/MenuItems"]
-margin_top = 300.0
-margin_right = 354.0
-margin_bottom = 331.0
-theme = ExtResource( 1 )
-text = "Quit"
-
-[node name="HelpPanel" type="Panel" parent="CenterContainer"]
+[node name="HelpPanel" type="Panel" parent="."]
 visible = false
 margin_left = 512.0
 margin_top = 384.0
 margin_right = 512.0
 margin_bottom = 384.0
 
-[node name="Sprite" type="Sprite" parent="CenterContainer/HelpPanel"]
+[node name="Sprite" type="Sprite" parent="HelpPanel"]
 texture = ExtResource( 4 )
 
-[node name="ReturnButton" type="Button" parent="CenterContainer/HelpPanel"]
+[node name="ReturnButton" type="Button" parent="HelpPanel"]
 margin_left = -492.379
 margin_top = -365.498
 margin_right = -363.379
@@ -103,11 +38,165 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MenuBackground" type="NinePatchRect" parent="."]
+margin_left = 343.0
+margin_top = 71.0
+margin_right = 695.0
+margin_bottom = 491.0
+texture = ExtResource( 5 )
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItems" type="VBoxContainer" parent="MenuBackground"]
+margin_left = 37.0
+margin_top = 31.0
+margin_right = 317.0
+margin_bottom = 431.0
+rect_min_size = Vector2( 0, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="MenuBackground/MenuItems"]
+margin_right = 280.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.835294, 0.482353, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Paused"
+align = 1
+
+[node name="ResumeButton" type="Button" parent="MenuBackground/MenuItems"]
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 95.0
+theme = ExtResource( 1 )
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="MenuBackground/MenuItems"]
+margin_top = 99.0
+margin_right = 280.0
+margin_bottom = 130.0
+theme = ExtResource( 1 )
+text = "Retry Mission"
+
+[node name="HelpButton" type="Button" parent="MenuBackground/MenuItems"]
+margin_top = 134.0
+margin_right = 280.0
+margin_bottom = 165.0
+theme = ExtResource( 1 )
+text = "How To Play"
+
+[node name="_SpacerLabel2" type="Label" parent="MenuBackground/MenuItems"]
+margin_top = 169.0
+margin_right = 280.0
+margin_bottom = 183.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseSensitivityLabel" type="Label" parent="MenuBackground/MenuItems"]
+margin_top = 187.0
+margin_right = 280.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 0, 20 )
+theme = ExtResource( 1 )
+text = "Mouse Sensitivity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseSensitivitySlider" type="HSlider" parent="MenuBackground/MenuItems"]
+margin_top = 216.0
+margin_right = 280.0
+margin_bottom = 232.0
+min_value = 0.05
+max_value = 2.0
+step = 0.05
+value = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseSettings" type="HBoxContainer" parent="MenuBackground/MenuItems"]
+margin_top = 236.0
+margin_right = 280.0
+margin_bottom = 261.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvertXLabel" type="Label" parent="MenuBackground/MenuItems/MouseSettings"]
+margin_right = 96.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 20 )
+theme = ExtResource( 1 )
+text = "Invert X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvertXToggle" type="CheckBox" parent="MenuBackground/MenuItems/MouseSettings"]
+margin_left = 100.0
+margin_right = 138.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+
+[node name="InvertYLabel" type="Label" parent="MenuBackground/MenuItems/MouseSettings"]
+margin_left = 142.0
+margin_right = 237.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 20 )
+theme = ExtResource( 1 )
+text = "Invert Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvertYToggle" type="CheckBox" parent="MenuBackground/MenuItems/MouseSettings"]
+margin_left = 241.0
+margin_right = 280.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="_SpacerLabel" type="Label" parent="MenuBackground/MenuItems"]
+margin_top = 265.0
+margin_right = 280.0
+margin_bottom = 279.0
+
+[node name="ReturnToTitleButton" type="Button" parent="MenuBackground/MenuItems"]
+margin_top = 283.0
+margin_right = 280.0
+margin_bottom = 314.0
+theme = ExtResource( 1 )
+text = "Quit to Title"
+
+[node name="QuitButton" type="Button" parent="MenuBackground/MenuItems"]
+margin_top = 318.0
+margin_right = 280.0
+margin_bottom = 349.0
+theme = ExtResource( 1 )
+text = "Quit"
+
 [connection signal="tree_exiting" from="." to="." method="_on_PauseMenu_tree_exiting"]
 [connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
-[connection signal="pressed" from="CenterContainer/MenuItems/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuItems/RestartButton" to="." method="_on_RestartButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuItems/HelpButton" to="." method="_on_HelpButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuItems/ReturnToTitleButton" to="." method="_on_ReturnToTitleButton_pressed"]
-[connection signal="pressed" from="CenterContainer/MenuItems/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="CenterContainer/HelpPanel/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="HelpPanel/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="MenuBackground/MenuItems/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="MenuBackground/MenuItems/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="MenuBackground/MenuItems/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="value_changed" from="MenuBackground/MenuItems/MouseSensitivitySlider" to="." method="_on_MouseSensitivitySlider_value_changed"]
+[connection signal="toggled" from="MenuBackground/MenuItems/MouseSettings/InvertXToggle" to="." method="_on_InvertXToggle_toggled"]
+[connection signal="toggled" from="MenuBackground/MenuItems/MouseSettings/InvertYToggle" to="." method="_on_InvertYToggle_toggled"]
+[connection signal="pressed" from="MenuBackground/MenuItems/ReturnToTitleButton" to="." method="_on_ReturnToTitleButton_pressed"]
+[connection signal="pressed" from="MenuBackground/MenuItems/QuitButton" to="." method="_on_QuitButton_pressed"]

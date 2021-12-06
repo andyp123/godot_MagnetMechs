@@ -13,7 +13,8 @@ var velocity: Vector3 = Vector3.ZERO
 
 # Mouse input settings
 export var capture_mouse_cursor: bool = true
-export var mouse_sensitivity: Vector2 = Vector2(0.1, 0.05)
+# Currently using Settings.mouse_sensitivity etc.
+#export var mouse_sensitivity: Vector2 = Vector2(0.8, 0.8)
 export var max_rotation_x: float = 75
 var look_input: Vector2 = Vector2.ZERO
 var rotation_offset: Vector2 = Vector2.ZERO
@@ -43,8 +44,10 @@ func _process(delta: float) -> void:
 		return
 	
 	# mouse
-	rotation_offset.y += look_input.x * mouse_sensitivity.x * delta
-	rotation_offset.x += look_input.y * mouse_sensitivity.y * delta
+	var invert_x = -1.0 if Settings.mouse_invert_x else 1.0
+	var invert_y = -1.0 if Settings.mouse_invert_y else 1.0
+	rotation_offset.y += look_input.x * Settings.mouse_sensitivity * delta * invert_x
+	rotation_offset.x += look_input.y * Settings.mouse_sensitivity * delta * invert_y
 	# joy
 	rotation_offset.y += (Input.get_action_strength("look_right") - Input.get_action_strength("look_left")) * stick_pan_speed * delta
 	rotation_offset.x += -(Input.get_action_strength("look_up") - Input.get_action_strength("look_down")) * stick_pan_speed * delta

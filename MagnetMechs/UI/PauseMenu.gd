@@ -2,8 +2,8 @@ extends Control
 
 var current_level # should be type Level
 
-onready var menu_items = $CenterContainer/MenuItems
-onready var help_panel = $CenterContainer/HelpPanel
+onready var menu_items = $MenuBackground/MenuItems
+onready var help_panel = $HelpPanel
 
 func _ready() -> void:
 	pass
@@ -44,3 +44,15 @@ func _on_PauseMenu_visibility_changed() -> void:
 
 func _on_PauseMenu_tree_exiting() -> void:
 	get_tree().paused = false
+
+
+func _on_MouseSensitivitySlider_value_changed(value: float) -> void:
+	Settings.mouse_sensitivity = value
+
+
+func _on_InvertXToggle_toggled(button_pressed: bool) -> void:
+	Settings.mouse_invert_x = button_pressed
+
+
+func _on_InvertYToggle_toggled(button_pressed: bool) -> void:
+	Settings.mouse_invert_y = button_pressed
