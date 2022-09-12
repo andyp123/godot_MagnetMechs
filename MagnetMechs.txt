@@ -1,0 +1,35 @@
+Magnetic Mech Pilot
+MAGNET MECHS
+磁力騎士 (jiryoku kishi)
+
+Sizes:
+- Minimum crouch height: 3m
+- Maximum step height: 2.5 - 3m (ideal 2m?)
+- Minimum width (tunnel): 4m
+- Minimum width (walkway): 5m (could adjust movement for this)
+- Max slope angle: 60 degrees
+- Cargo height: 1m per unit of weight (weight_units to avoid collision with PhysicsBody weight)
+
+Street/Tile size: 8x8m? 10x10m?
+Road should be about 4-5m across not including footpath
+LZ should be at least 5m in diameter
+
+Level goals:
+Using the magnet mech, the player must manipulate objects in the environment to get life pods
+safely to the rescue zone, where they will be saved by manned drone.
+
+Cargo:
+- Life Pod (1): Place of refuge for people in an emergency. Must be taken to LZ for pickup
+- Reinforced Steel Block (2): Can't be pushed around or destroyed, but can be lifted
+- Abandoned Vehicle (1): Can be pushed to a degree, but better to blow them up
+- Cannon (3): Large gun that can be used to unblock areas of debris or shoot enemies
+
+Level gimmicks:
+Weight switch: Place cargo on the switch and it will activate
+Door: Switches can open doors.
+Rescue Zone: The player must place rescue pods here to complete the level
+
+Rescue Pods:
+Life pods only have a certain amount of emergency power before they can no longer cycle clean air
+and the inhabitants inside suffocate. Life pods can use the player mech as a power source
+while they are being carried, so their own power source will not drain.
