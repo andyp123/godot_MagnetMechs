@@ -1,0 +1,12 @@
+Magnet Mechs Tweaks:
+- Fullscreen/window support
+- Better controller support. Everything should work on gamepad
+- Would be nice to auto-detect gamepad/mouse keyboard
+  - gamepad input switches to gamepad
+  - mouse button or key switches to keyboard/mouse
+- Menu scaling and correct positioning regardless of screen size
+
+Stretch:
+- Is it trivial to display button glyphs in text boxes in Godot?
+  - can they be switched in dynamically?
+- Localisation support (just to learn how in Godot)
