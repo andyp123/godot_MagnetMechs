@@ -311,7 +311,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0510025, 0 )
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0.632238, 0 )
 use_in_baked_light = true
 mesh = SubResource( 1 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="TitleRoom/Magnet"]
 
@@ -327,7 +326,6 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.82592, 1.68574 )
 use_in_baked_light = true
 mesh = SubResource( 4 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="TitleRoom/Room"]
 
@@ -539,7 +537,6 @@ target_node = NodePath("../../FootTarget_Right")
 [node name="Mech" type="MeshInstance" parent="PlayerMech/Armature/Skeleton"]
 mesh = SubResource( 37 )
 skin = SubResource( 38 )
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="PlayerMech/Armature"]
 collision_layer = 0
@@ -575,7 +572,6 @@ shape = SubResource( 41 )
 use_in_baked_light = true
 mesh = SubResource( 42 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="RescuePod3" type="StaticBody" parent="."]
 transform = Transform( -0.961156, 0, 0.276006, 0, 1, 0, -0.276006, 0, -0.961156, -2.09795, -3.1818, -2.86663 )
@@ -590,7 +586,6 @@ shape = SubResource( 41 )
 use_in_baked_light = true
 mesh = SubResource( 42 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="RescuePod2" type="StaticBody" parent="."]
 transform = Transform( 0.681028, 0, -0.732258, 0, 1, 0, 0.732258, 0, 0.681028, -1.64359, -4.17788, -3.34929 )
@@ -605,7 +600,6 @@ shape = SubResource( 41 )
 use_in_baked_light = true
 mesh = SubResource( 42 )
 skeleton = NodePath("")
-material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.30647, 4.94695 )

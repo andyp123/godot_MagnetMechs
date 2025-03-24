@@ -42,14 +42,13 @@ radius = 0.389889
 [sub_resource type="SphereShape" id=10]
 radius = 0.389889
 
-[node name="CarA" type="RigidBody" groups=[
-"cargo",
-]]
+[node name="CarA" type="RigidBody" groups=["cargo"]]
 collision_layer = 16
 collision_mask = 63
 physics_material_override = SubResource( 4 )
 gravity_scale = 2.0
 continuous_cd = true
+can_sleep = false
 linear_damp = 2.0
 angular_damp = 4.0
 script = ExtResource( 2 )
@@ -61,7 +60,6 @@ weight_units = 2
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
-material/0 = null
 
 [node name="ConvexShape" type="CollisionShape" parent="."]
 shape = SubResource( 5 )
