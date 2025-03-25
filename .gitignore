@@ -9,7 +9,6 @@ export_presets.cfg
 data_*/
 
 # Project Specific ignores
-AssetSource/**
 Builds/**
 Videos/**
 
